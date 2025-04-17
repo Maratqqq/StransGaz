@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТрансГаз - Доставка газа</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="logo">
+            <img src="/my-website/images/Логотип/1033214174468152528.png" alt="ТрансГаз">
+            <div>
+                <h1>ТрансГаз</h1>
+                <p>Заправка газгольдеров</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#pricing">Цены</a></li>
+                <li><a href="#workflow">Как мы работаем</a></li>
+                <li><a href="#testimonials">Отзывы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+        <a href="#contacts" class="cta">Срочный вопрос</a>
+        <button class="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Герой секция -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>Доставим <span>газ</span> за 4 часа</h2>
+            <p>В любое время дня и ночи. Вне зависимости от погодных условий. Гарантия качества и безопасности.</p>
+            <a href="#contacts" class="cta-button">Заказать доставку газа</a>
+        </div>
+        <div class="hero-image">
+            <img src="/my-website/images/1stscreen 1.png" alt="Доставка газа">
+        </div>
+        <div class="hero-shape"></div>
+    </section>
+
+    <!-- Секция с ценами -->
+    <section class="pricing-section" id="pricing">
+        <div class="section-header">
+            <h2>Стоимость газа в ваш газгольдер сегодня</h2>
+            <p>Мы предлагаем оптимальное соотношение цены и качества для вашего комфорта</p>
+        </div>
+        
+        <div class="gas-composition">
+            <div class="composition-title">Идеальное соотношение</div>
+            <div class="composition-bar">
+                <div class="propane-part">80% Пропан</div>
+                <div class="butane-part">20% Бутан</div>
+            </div>
+        </div>
+        
+        <div class="gas-container">
+            <!-- Блок бутана (слева) -->
+            <div class="gas-block left-block">
+                <div class="gas-name">БУТАН</div>
+                <div class="gas-price">25.50 <span>₽/литр</span></div>
+                <div class="gas-info">
+                    Испарение Бутана происходит только до 0 градусов и годится для использования в тёплое время года
+                </div>
+                <a href="#contacts" class="order-button">Заказать</a>
+            </div>
+            
+            <!-- Изображение газовоза (по центру) -->
+            <div class="gas-image-container">
+                <img src="/my-website/images/4444.png" alt="Газовоз" class="gas-image">
+            </div>
+            
+            <!-- Блок пропана (справа) -->
+            <div class="gas-block right-block">
+                <div class="gas-name">ПРОПАН</div>
+                <div class="gas-price">32.75 <span>₽/литр</span></div>
+                <div class="gas-info">
+                    Физически испарение происходит до -40 градусов, что позволяет использовать его в наших с вами погодных условиях
+                </div>
+                <a href="#contacts" class="order-button">Заказать</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция преимуществ -->
+    <section class="advantages-section" id="advantages">
+        <div class="section-header">
+            <h2>Почему выбирают нас</h2>
+            <p>Мы заботимся о каждом клиенте и предлагаем лучшие условия на рынке</p>
+        </div>
+        <div class="advantages-grid">
+            <div class="advantage-card animate" style="animation-delay: 0.1s">
+                <div class="advantage-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="advantage-title">Качественный газ</h3>
+                <p class="advantage-text">Мы поставляем только сертифицированный газ с идеальным соотношением пропана и бутана, что гарантирует стабильную работу вашего оборудования.</p>
+            </div>
+            <div class="advantage-card animate" style="animation-delay: 0.2s">
+                <div class="advantage-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3 class="advantage-title">Быстрая доставка</h3>
+                <p class="advantage-text">Доставляем газ в течение 4 часов после заказа, в любое время суток. Наши водители всегда на связи.</p>
+            </div>
+            <div class="advantage-card animate" style="animation-delay: 0.3s">
+                <div class="advantage-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3 class="advantage-title">Опытные специалисты</h3>
+                <p class="advantage-text">Наши сотрудники имеют более 10 лет опыта работы с газовым оборудованием и проходят регулярное обучение.</p>
+            </div>
+            <div class="advantage-card animate" style="animation-delay: 0.4s">
+                <div class="advantage-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="advantage-title">Гарантия безопасности</h3>
+                <p class="advantage-text">Соблюдаем все нормы и требования безопасности при транспортировке и заправке. Наша техника проходит регулярный техосмотр.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как мы работаем -->
+    <section class="workflow-section" id="workflow">
+        <div class="section-header">
+            <h2>Как мы работаем</h2>
+            <p>Простая и прозрачная схема сотрудничества для вашего удобства</p>
+        </div>
+        <div class="steps-container">
+            <div class="steps-line"></div>
+            <div class="step animate" style="animation-delay: 0.1s">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Заявка</h3>
+                <p class="step-text">Оставляете заявку на сайте или по телефону. Наш оператор ответит на все ваши вопросы.</p>
+            </div>
+            <div class="step animate" style="animation-delay: 0.2s">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Подтверждение</h3>
+                <p class="step-text">Наш менеджер связывается с вами для уточнения деталей и согласовывает время доставки.</p>
+            </div>
+            <div class="step animate" style="animation-delay: 0.3s">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Доставка</h3>
+                <p class="step-text">Доставляем газ в течение 4 часов после подтверждения. Водитель предупредит о своем приезде.</p>
+            </div>
+            <div class="step animate" style="animation-delay: 0.4s">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Оплата</h3>
+                <p class="step-text">Оплачиваете заказ после заправки газгольдера. Принимаем наличные и безналичный расчет.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="section-header">
+            <h2>Отзывы наших клиентов</h2>
+            <p>Более 1000 довольных клиентов по всей Москве и области</p>
+        </div>
+        
+        <div class="testimonials-wrapper">
+            <button class="testimonial-nav-btn testimonial-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Клиент" class="client-photo">
+                    <h3 class="client-name">Иван Петров</h3>
+                    <p class="client-position">Частный домовладелец</p>
+                    <p class="client-review">Заказывал газ для дома уже несколько раз. Всегда привозят быстро, газ качественный, без запаха. Цены адекватные. Особенно порадовала работа водителя - аккуратно подъехал, все объяснил. Рекомендую!</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Клиент" class="client-photo">
+                    <h3 class="client-name">Ольга Смирнова</h3>
+                    <p class="client-position">Владелец кафе</p>
+                    <p class="client-review">Работаем с ТрансГаз уже 2 года. Ни разу не подвели с доставкой, даже зимой в сильные морозы. Всегда привозят вовремя, документы в порядке. Очень довольна сотрудничеством и планирую продолжать.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Клиент" class="client-photo">
+                    <h3 class="client-name">Алексей Козлов</h3>
+                    <p class="client-position">Директор строительной компании</p>
+                    <p class="client-review">Используем газ для отопления строительных объектов. ТрансГаз - надежный поставщик с профессиональным подходом. Всегда вовремя и без нареканий. Отдельное спасибо за гибкие условия для постоянных клиентов.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Клиент" class="client-photo">
+                    <h3 class="client-name">Екатерина Власова</h3>
+                    <p class="client-position">Владелец загородного дома</p>
+                    <p class="client-review">Пользуюсь услугами ТрансГаз больше года. Ни разу не было проблем с качеством газа. Доставка всегда по времени, водители вежливые и профессиональные. Цены ниже, чем у конкурентов. Очень рекомендую!</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Клиент" class="client-photo">
+                    <h3 class="client-name">Дмитрий Соколов</h3>
+                    <p class="client-position">Владелец автомойки</p>
+                    <p class="client-review">Как бизнесмен ценю надежность. ТрансГаз ни разу не подвел с поставками. Газ всегда качественный, счета выставляют вовремя. Персонал вежливый и компетентный. Буду работать и дальше только с ними.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/women/23.jpg" alt="Клиент" class="client-photo">
+                    <h3 class="client-name">Анна Кузнецова</h3>
+                    <p class="client-position">Владелец гостевого дома</p>
+                    <p class="client-review">Заказываем газ для отопления гостевого дома. Очень довольны сервисом - всегда привозят точно в срок, даже в выходные. Газ горит ровно, без копоти. Цены приятно удивляют. Спасибо за качественный сервис!</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Клиент" class="client-photo">
+                    <h3 class="client-name">Сергей Николаев</h3>
+                    <p class="client-position">Частный клиент</p>
+                    <p class="client-review">Живу в частном доме, газ - основное топливо. ТрансГаз выбрал по отзывам и не пожалел. Доставка быстрая, водители аккуратные, газ качественный. Особенно нравится система скидок для постоянных клиентов.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/women/87.jpg" alt="Клиент" class="client-photo">
+                    <h3 class="client-name">Марина Федорова</h3>
+                    <p class="client-position">Владелец мини-отеля</p>
+                    <p class="client-review">Работаем с ТрансГаз более 3 лет. Никаких нареканий - только положительные эмоции. Всегда привозят вовремя, газ отличного качества. Персонал вежливый и профессиональный. Рекомендую всем!</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Клиент" class="client-photo">
+                    <h3 class="client-name">Артем Волков</h3>
+                    <p class="client-position">Частный клиент</p>
+                    <p class="client-review">Очень доволен сервисом. Заказал газ вечером - привезли ночью, как и договаривались. Водитель был вежлив, все объяснил. Газ горит хорошо, без запаха. Буду заказывать еще и рекомендовать знакомым.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/women/35.jpg" alt="Клиент" class="client-photo">
+                    <h3 class="client-name">Наталья Иванова</h3>
+                    <p class="client-position">Владелец ресторана</p>
+                    <p class="client-review">Используем газ для кухни. ТрансГаз - наш постоянный поставщик уже 4 года. Ни разу не было сбоев в поставках. Качество газа отличное, горение ровное. Персонал всегда на связи и готов помочь. Оценка 5+!</p>
+                </div>
+            </div>
+            
+            <button class="testimonial-nav-btn testimonial-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="testimonials-nav">
+            <div class="testimonial-dot active"></div>
+            <div class="testimonial-dot"></div>
+            <div class="testimonial-dot"></div>
+            <div class="testimonial-dot"></div>
+            <div class="testimonial-dot"></div>
+            <div class="testimonial-dot"></div>
+            <div class="testimonial-dot"></div>
+            <div class="testimonial-dot"></div>
+            <div class="testimonial-dot"></div>
+            <div class="testimonial-dot"></div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contacts-section" id="contacts">
+        <div class="section-header">
+            <h2>Контакты</h2>
+            <p>Свяжитесь с нами любым удобным способом</p>
+        </div>
+        <div class="contacts-container">
+            <div class="contact-card animate" style="animation-delay: 0.1s">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3 class="contact-title">Телефон</h3>
+                <div class="contact-info">
+                    <p><a href="tel:+78001234567">8 (800) 123-45-67</a></p>
+                    <p>Круглосуточно, без выходных</p>
+                </div>
+            </div>
+            <div class="contact-card animate" style="animation-delay: 0.2s">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="contact-title">Адрес</h3>
+                <div class="contact-info">
+                    <p>г. Дербент, ул. С-ТрансГаз, улица Шеболдаева, 56/2</p>
+                    <p>Офис 305</p>
+                    <p>Работаем: Пн-Пт с 9:00 до 18:00</p>
+                </div>
+            </div>
+            <div class="contact-card animate" style="animation-delay: 0.3s">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="contact-title">Электронная почта</h3>
+                <div class="contact-info">
+                    <p><a href="mailto:info@transgaz.ru">info@transgaz.ru</a></p>
+                    <p>Ответим в течение двух часов</p>
+                    <p>Для коммерческих предложений: <a href="mailto:sales@transgaz.ru">sales@transgaz.ru</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form animate" style="animation-delay: 0.4s">
+            <h3>Остались вопросы?</h3>
+            <p>Заполните форму и мы свяжемся с вами в ближайшее время</p>
+            
+            <form>
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" class="form-control" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ваш вопрос</label>
+                    <textarea id="message" class="form-control" placeholder="Опишите ваш вопрос или заказ"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <h3>ТрансГаз</h3>
+                    <p>ООО "ТрансГаз" - доставка газа по Москве и области. Надежность и качество с 2010 года.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Меню</h4>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#advantages">Преимущества</a></li>
+                    <li><a href="#pricing">Цены</a></li>
+                    <li><a href="#workflow">Как мы работаем</a></li>
+                    <li><a href="#testimonials">Отзывы</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Контакты</h4>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+78001234567">8 (800) 123-45-67</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@transgaz.ru">info@transgaz.ru</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Газовиков, 15</p>
+                <p><i class="fas fa-clock"></i> Пн-Пт: 9:00 - 18:00</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2023 ООО "ТрансГаз". Все права защищены.
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
