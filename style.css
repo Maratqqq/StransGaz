@@ -1754,52 +1754,221 @@ color: var(--white);
 }
 
 /* Адаптация для мобильных */
-@media (max-width: 768px) {
-.about-container {
-    flex-direction: column;
+/* Удалены все старые медиазапросы и добавлены новые для сенсорных устройств */
+
+/* Основные стили для сенсорных устройств */
+@media (hover: none) and (pointer: coarse) {
+  /* Уменьшаем размеры кликабельных элементов */
+  .header .cta, 
+  .cta-button, 
+  .order-button, 
+  .submit-btn,
+  .testimonial-dot,
+  .social-links a,
+  .member-social a {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px 20px;
+  }
+
+  /* Увеличиваем отступы для удобного касания */
+  .header nav ul li {
+    margin: 0 0 25px 0;
+  }
+
+  /* Убираем hover-эффекты */
+  .advantage-card:hover,
+  .value-card:hover,
+  .team-member:hover,
+  .stat-card:hover,
+  .contact-card:hover,
+  .step:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+  }
+
+  /* Увеличиваем размер текстовых полей */
+  .form-control {
+    padding: 18px;
+    font-size: 1.1em;
+  }
+
+  /* Увеличиваем размер иконок */
+  .social-links a,
+  .member-social a {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3em;
+  }
+
+  /* Адаптация шапки */
+  .header {
+    padding: 12px 5%;
+  }
+
+  .header .logo img {
+    height: 50px;
+  }
+
+  .header .cta {
+    padding: 12px 25px;
+  }
+
+  /* Адаптация героя */
+  .hero-section {
+    padding: 120px 5% 80px;
+  }
+
+  .hero-content h2 {
+    font-size: 2em;
+  }
+
+  /* Адаптация секций */
+  .section-header h2 {
+    font-size: 1.8em;
+  }
+
+  .section-header p {
+    font-size: 1em;
+  }
+
+  /* Адаптация карточек */
+  .advantage-card,
+  .value-card,
+  .team-member,
+  .stat-card,
+  .contact-card,
+  .step {
+    padding: 30px 20px;
+  }
+
+  /* Адаптация FAQ */
+  .faq-question {
+    padding: 20px;
+  }
+
+  .faq-question h3 {
+    font-size: 1.1em;
+  }
+
+  /* Адаптация подвала */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Отключаем сложные анимации */
+  .animate {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-image img,
+  .gas-image {
+    animation: none !important;
+  }
+
+  /* Увеличиваем область клика для чекбоксов и радио */
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: 24px;
+    height: 24px;
+  }
 }
 
-.about-content, .about-stats {
+/* Оптимизация для устройств с маленькими экранами */
+@media (max-width: 480px) and (hover: none) and (pointer: coarse) {
+  .header {
+    padding: 10px 3%;
+  }
+
+  .header .logo img {
+    height: 40px;
+  }
+
+  .header .logo h1 {
+    font-size: 1.3em;
+  }
+
+  .hero-content h2 {
+    font-size: 1.6em;
+  }
+
+  .section-header h2 {
+    font-size: 1.5em;
+  }
+
+  .advantage-card,
+  .value-card,
+  .team-member,
+  .stat-card,
+  .contact-card,
+  .step {
+    padding: 25px 15px;
+  }
+
+  .faq-question {
+    padding: 15px;
+  }
+}
+
+/* Оптимизация для очень маленьких экранов */
+@media (max-width: 360px) and (hover: none) and (pointer: coarse) {
+  .hero-content h2 {
+    font-size: 1.4em;
+  }
+
+  .header .logo h1 {
+    font-size: 1.1em;
+  }
+
+  .cta-button,
+  .order-button,
+  .submit-btn {
     width: 100%;
+    text-align: center;
+  }
 }
 
-.about-stats {
-    grid-template-columns: 1fr 1fr;
+/* Отключение анимаций для пользователей, предпочитающих reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-image img,
+  .gas-image {
+    animation: none !important;
+  }
 }
 
-.team-grid {
-    grid-template-columns: 1fr 1fr;
-}
-}
+/* Дополнительные улучшения для сенсорных устройств */
+.touch-device {
+  /* Увеличиваем размеры кликабельных элементов */
+  a, button, input[type="submit"], .btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
 
-@media (max-width: 480px) {
-.about-section {
-    padding: 60px 3%;
-}
+  /* Увеличиваем отступы между элементами */
+  .advantages-grid,
+  .values-grid,
+  .team-grid {
+    gap: 20px;
+  }
 
-.about-content {
-    padding: 25px;
-}
+  /* Увеличиваем размер текста */
+  body {
+    font-size: 16px;
+  }
 
-.about-stats {
-    grid-template-columns: 1fr;
-}
-
-.team-grid {
-    grid-template-columns: 1fr;
-}
-}
-
-/* Добавьте это в конец файла style.css */
-html {
-scroll-behavior: smooth;
-}
-
-/* Для старых браузеров, где не поддерживается scroll-behavior */
-@media screen and (prefers-reduced-motion: reduce) {
-html {
-    scroll-behavior: auto;
-}
+  /* Улучшаем видимость фокуса */
+  a:focus, button:focus, input:focus, textarea:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+  }
 }
 
 /* Добавьте это в конец файла style.css */
@@ -1905,3 +2074,4 @@ max-height: 500px;
     padding: 15px 20px;
 }
 }
+
