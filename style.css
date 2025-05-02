@@ -2178,3 +2178,55 @@ body {
     padding-right: 10px;
   }
 }
+
+/* 1. Исправление для hero-section */
+.hero-section {
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-shape {
+    right: -150px; /* Уменьшаем выступ */
+    width: 500px; /* Уменьшаем размер */
+}
+
+@media (max-width: 768px) {
+    .hero-shape {
+        display: none; /* Полностью скрываем на мобильных */
+    }
+}
+
+/* 2. Исправление для pricing-section */
+.pricing-section {
+    overflow: hidden;
+}
+
+.gas-container {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+/* 3. Глобальные исправления */
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+* {
+    max-width: 100%; /* Гарантируем, что ничего не выйдет за границы */
+}
+
+/* 4. Специфичные исправления для таблицы */
+.composition-bar {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* 5. Для очень маленьких экранов */
+@media (max-width: 360px) {
+    .propane-part, 
+    .butane-part {
+        font-size: 0.8em;
+        padding: 0 5px;
+    }
+}
