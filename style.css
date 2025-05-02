@@ -1903,26 +1903,90 @@ max-height: 500px;
 
 .faq-item.active .faq-answer {
     padding: 15px 20px;
+}
+}
 
-  /* Добавьте этот медиа-запрос в конец вашего файла стилей */
 @media (max-width: 768px) {
-  .composition-bar {
-    height: 25px; /* Уменьшаем высоту в 2 раза */
-    border-radius: 12.5px; /* Соответственно уменьшаем радиус скругления */
+  /* Уменьшение размера логотипа и кнопки в шапке */
+  .header .logo img {
+    height: 40px;
   }
-  
-  .propane-part, .butane-part {
-    font-size: 0.55em; /* Уменьшаем размер шрифта */
+
+  .header .logo h1 {
+    font-size: 1.3em;
   }
-  
-  .gas-composition {
-    margin-bottom: 25px; /* Уменьшаем отступ */
+
+  .header .logo p {
+    font-size: 0.7em;
   }
-  
-  .composition-title {
-    font-size: 0.9em; /* Уменьшаем размер шрифта заголовка */
-    margin-bottom: 10px; /* Уменьшаем отступ */
+
+  .header .cta {
+    padding: 8px 15px;
+    font-size: 0.8em;
   }
-}
-}
+
+  /* Уменьшение размера картинок */
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .gas-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Уменьшение размера кнопок */
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+
+  .order-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  /* Уменьшение размера блоков */
+  .gas-block {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .advantage-card {
+    padding: 30px 15px;
+  }
+
+  .step {
+    width: 100%;
+    padding: 25px;
+  }
+
+  /* Уменьшение размера статистики */
+  .stat-number {
+    font-size: 2em;
+  }
+
+  .stat-title {
+    font-size: 0.9em;
+  }
+
+  /* Уменьшение размера контактных карточек */
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+  }
+
+  .contact-title {
+    font-size: 1.1em;
+  }
+
+  .contact-info {
+    font-size: 1em;
+  }
 }
