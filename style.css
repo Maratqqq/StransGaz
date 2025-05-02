@@ -90,5 +90,122 @@
     font-size: calc(14px * 0.9) !important;
     padding: 0.3em !important;
     margin: 0.2em !important;
+
+    /* =============================================== */
+/* ТОЧЕЧНЫЕ ИСПРАВЛЕНИЯ ДЛЯ REALME 8 */
+/* =============================================== */
+@media (max-width: 414px) {
+  /* 1. Кнопка в шапке */
+  .header .cta {
+    padding: 3px 8px !important;
+    font-size: 0.6rem !important;
+    border-width: 1px !important;
+    transform: scale(0.85) !important;
+    transform-origin: right center;
+    margin-left: 5px !important;
+  }
+
+  /* 2. Блоки с пропаном/бутаном */
+  .gas-block {
+    padding: 10px !important;
+    transform: scale(0.9) !important;
+    margin: 0 auto 15px !important;
+    width: 95% !important;
+  }
+  
+  .gas-name {
+    font-size: 1.2rem !important;
+  }
+  
+  .gas-price {
+    font-size: 1.3rem !important;
+    margin: 10px 0 !important;
+  }
+  
+  .gas-info {
+    font-size: 0.7rem !important;
+    min-height: auto !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .order-button {
+    padding: 6px 12px !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* 3. Карточки преимуществ */
+  .advantage-card {
+    padding: 12px 10px !important;
+    margin-bottom: 10px !important;
+    transform: scale(0.95) !important;
+  }
+  
+  .advantage-icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 1rem !important;
+  }
+  
+  .advantage-title {
+    font-size: 0.9rem !important;
+  }
+  
+  .advantage-text {
+    font-size: 0.7rem !important;
+  }
+
+  /* 4. Карточки "Как мы работаем" */
+  .step {
+    padding: 12px 10px !important;
+    width: 100% !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .step-number {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .step-title {
+    font-size: 0.9rem !important;
+  }
+  
+  .step-text {
+    font-size: 0.7rem !important;
+  }
+
+  /* 5. Карточки контактов */
+  .contact-card {
+    padding: 15px 10px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .contact-icon {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1rem !important;
+  }
+  
+  .contact-title {
+    font-size: 0.9rem !important;
+  }
+  
+  .contact-info {
+    font-size: 0.7rem !important;
+  }
+}
+
+/* Атомарный фикс для всех элементов */
+@media (max-width: 414px) {
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  body {
+    zoom: 0.93 !important;
+  }
+}
   }
 }
