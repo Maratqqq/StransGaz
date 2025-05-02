@@ -1754,118 +1754,186 @@ color: var(--white);
 }
 
 /* Адаптация для мобильных */
-/* Глобальные исправления для мобильных */
 /* =============================================== */
-/* АДАПТАЦИЯ ДЛЯ REALME 8 И АНАЛОГОВ */
+/* Глобальное уменьшение масштаба для Realme 8 */
 /* =============================================== */
-/* =============================================== */
-/* Оптимизация для мобильных устройств */
-/* =============================================== */
-@media (max-width: 767px) {
-  /* 1. Кнопка "Отправить заявку" в шапке */
+@media only screen 
+  and (max-width: 414px) 
+  and (-webkit-min-device-pixel-ratio: 2.5) 
+  and (orientation: portrait) {
+
+  /* Базовое уменьшение размеров */
+  html {
+    font-size: 14px;
+  }
+  
+  /* 1. Шапка сайта */
+  .header {
+    padding: 8px 4%;
+  }
+  
+  .header .logo img {
+    height: 36px;
+  }
+  
+  .header .logo h1 {
+    font-size: 1.1rem;
+  }
+  
+  .header .logo p {
+    font-size: 0.6rem;
+  }
+  
   .header .cta {
-    padding: 8px 12px !important;
-    font-size: 0.75rem !important;
-    white-space: nowrap;
-    border-radius: 20px;
-    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 0.65rem;
+    border-radius: 15px;
+  }
+  
+  .hamburger {
+    font-size: 1.2rem;
   }
 
-  /* 2. Карточки "Почему выбирают нас" */
-  .advantage-card {
-    padding: 20px 15px !important;
+  /* 2. Герой-секция */
+  .hero-section {
+    padding: 80px 4% 50px;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.6rem;
     margin-bottom: 15px;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  /* 3. Карточки "Преимущества" */
+  .advantage-card {
+    padding: 16px 12px;
   }
   
   .advantage-icon {
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 1.3rem !important;
-    margin-bottom: 15px !important;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
   }
   
   .advantage-title {
-    font-size: 1.1rem !important;
-    margin-bottom: 10px !important;
+    font-size: 1rem;
+    margin-bottom: 8px;
   }
   
   .advantage-text {
-    font-size: 0.85rem !important;
-    line-height: 1.5;
+    font-size: 0.8rem;
   }
 
-  /* 3. Карточки "Как мы работаем" */
+  /* 4. Карточки "Как мы работаем" */
   .step {
-    padding: 20px 15px !important;
-    margin-bottom: 15px;
-    width: 100% !important;
+    padding: 16px 12px;
   }
   
   .step-number {
-    width: 45px !important;
-    height: 45px !important;
-    font-size: 1.2rem !important;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+    margin-bottom: 12px;
   }
   
   .step-title {
-    font-size: 1.1rem !important;
+    font-size: 1rem;
   }
   
   .step-text {
-    font-size: 0.85rem !important;
+    font-size: 0.8rem;
   }
 
-  /* 4. Карточки контактов */
+  /* 5. Карточки контактов */
   .contact-card {
-    padding: 25px 15px !important;
-    margin-bottom: 15px;
+    padding: 20px 12px;
   }
   
   .contact-icon {
-    width: 60px !important;
-    height: 60px !important;
-    font-size: 1.5rem !important;
-    margin-bottom: 15px !important;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
   }
   
   .contact-title {
-    font-size: 1.1rem !important;
-    margin-bottom: 15px !important;
+    font-size: 1rem;
+    margin-bottom: 12px;
   }
   
   .contact-info {
-    font-size: 0.9rem !important;
-    line-height: 1.6;
+    font-size: 0.8rem;
+  }
+
+  /* 6. Форма обратной связи */
+  .contact-form {
+    padding: 20px 15px;
   }
   
-  /* Общие оптимизации для мобилок */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .submit-btn {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  /* 7. Общие элементы */
   .section-header h2 {
-    font-size: 1.6rem !important;
+    font-size: 1.4rem;
   }
   
   .section-header p {
-    font-size: 0.9rem !important;
-  }
-}
-
-/* =============================================== */
-/* Дополнительная адаптация для Realme 8 */
-/* =============================================== */
-@media only screen 
-  and (min-width: 412px) 
-  and (max-width: 414px) 
-  and (-webkit-min-device-pixel-ratio: 2.5) {
-  
-  /* Уменьшаем кнопку в шапке еще сильнее */
-  .header .cta {
-    padding: 6px 10px !important;
-    font-size: 0.7rem !important;
+    font-size: 0.8rem;
+    max-width: 90%;
   }
   
-  /* Уменьшаем отступы между карточками */
-  .advantages-grid,
-  .steps-container,
-  .contacts-container {
-    gap: 12px !important;
+  /* 8. Подвал */
+  .footer {
+    padding: 40px 4% 20px;
+  }
+  
+  .footer-logo h3 {
+    font-size: 1.3rem;
+  }
+  
+  .footer-links a, 
+  .footer-contact p {
+    font-size: 0.8rem;
+  }
+  
+  .social-links a {
+    width: 34px;
+    height: 34px;
+  }
+  
+  /* 9. Декоративные элементы */
+  .hero-shape {
+    width: 400px;
+    height: 400px;
+    right: -120px;
+    top: -120px;
+  }
+  
+  /* 10. Гарантированное уменьшение всех элементов */
+  * {
+    background-size: contain !important;
   }
 }
