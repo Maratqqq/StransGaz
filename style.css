@@ -1753,221 +1753,252 @@ background-color: var(--primary-color);
 color: var(--white);
 }
 
-/* Адаптация для мобильных */
-/* Удалены все старые медиазапросы и добавлены новые для сенсорных устройств */
+/* Удаляем старые медиазапросы и заменяем их современными */
 
-/* Основные стили для сенсорных устройств */
-@media (hover: none) and (pointer: coarse) {
-  /* Уменьшаем размеры кликабельных элементов */
-  .header .cta, 
-  .cta-button, 
-  .order-button, 
-  .submit-btn,
-  .testimonial-dot,
-  .social-links a,
-  .member-social a {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 12px 20px;
+/* ===== Общие мобильные стили ===== */
+@media (max-width: 767px) {
+  /* Шапка */
+  .header {
+    padding: 12px 4%;
   }
-
-  /* Увеличиваем отступы для удобного касания */
-  .header nav ul li {
-    margin: 0 0 25px 0;
+  
+  .header .logo img {
+    height: 42px;
   }
-
-  /* Убираем hover-эффекты */
-  .advantage-card:hover,
-  .value-card:hover,
-  .team-member:hover,
-  .stat-card:hover,
-  .contact-card:hover,
-  .step:hover {
-    transform: none;
-    box-shadow: var(--shadow);
-  }
-
-  /* Увеличиваем размер текстовых полей */
-  .form-control {
-    padding: 18px;
-    font-size: 1.1em;
-  }
-
-  /* Увеличиваем размер иконок */
-  .social-links a,
-  .member-social a {
-    width: 50px;
-    height: 50px;
+  
+  .header .logo h1 {
     font-size: 1.3em;
   }
-
-  /* Адаптация шапки */
-  .header {
-    padding: 12px 5%;
+  
+  .header .logo p {
+    font-size: 0.7em;
   }
-
-  .header .logo img {
-    height: 50px;
-  }
-
+  
   .header .cta {
-    padding: 12px 25px;
+    padding: 8px 15px;
+    font-size: 0.8em;
   }
-
-  /* Адаптация героя */
+  
+  /* Мобильное меню */
+  .header nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.98);
+    backdrop-filter: blur(5px);
+    padding: 20px 4%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+  
+  .header nav.active {
+    transform: translateY(0);
+  }
+  
+  .header nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .header nav ul li {
+    margin: 0;
+  }
+  
+  .hamburger {
+    display: block;
+    font-size: 1.4em;
+  }
+  
+  /* Герой-секция */
   .hero-section {
-    padding: 120px 5% 80px;
+    padding: 100px 4% 60px;
+    flex-direction: column;
+    text-align: center;
   }
-
+  
+  .hero-content {
+    margin-bottom: 40px;
+  }
+  
   .hero-content h2 {
-    font-size: 2em;
+    font-size: 1.8em;
+    line-height: 1.3;
   }
-
-  /* Адаптация секций */
+  
+  .hero-content p {
+    font-size: 1em;
+    margin-bottom: 25px;
+  }
+  
+  .cta-button {
+    padding: 12px 28px;
+    font-size: 1em;
+  }
+  
+  /* Общие стили секций */
+  .section-header {
+    margin-bottom: 40px;
+  }
+  
   .section-header h2 {
     font-size: 1.8em;
   }
-
+  
   .section-header p {
     font-size: 1em;
+    padding: 0 10px;
   }
-
-  /* Адаптация карточек */
-  .advantage-card,
-  .value-card,
-  .team-member,
-  .stat-card,
-  .contact-card,
+  
+  /* Секция с ценами */
+  .pricing-section {
+    padding: 70px 4%;
+  }
+  
+  .gas-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .gas-block {
+    width: 100%;
+    max-width: 320px;
+    padding: 25px;
+  }
+  
+  .gas-image-container {
+    order: 2;
+    margin: 15px 0;
+  }
+  
+  /* Секция "Как мы работаем" */
+  .workflow-section {
+    padding: 70px 4%;
+  }
+  
+  .steps-container {
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 0;
+  }
+  
+  .steps-line {
+    display: none;
+  }
+  
   .step {
-    padding: 30px 20px;
+    width: 100%;
+    max-width: 320px;
+    padding: 25px;
   }
-
-  /* Адаптация FAQ */
+  
+  /* Секция "О нас" */
+  .about-section {
+    padding: 70px 4%;
+  }
+  
+  .about-container {
+    flex-direction: column;
+  }
+  
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  
+  /* FAQ секция */
+  .faq-section {
+    padding: 70px 4%;
+  }
+  
   .faq-question {
-    padding: 20px;
+    padding: 16px 20px;
   }
-
+  
   .faq-question h3 {
-    font-size: 1.1em;
+    font-size: 1em;
+    line-height: 1.4;
   }
-
-  /* Адаптация подвала */
+  
+  /* Контакты */
+  .contacts-section {
+    padding: 70px 4%;
+  }
+  
+  .contact-form {
+    padding: 25px 20px;
+  }
+  
+  /* Подвал */
   .footer-content {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-
-  /* Отключаем сложные анимации */
-  .animate {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .hero-image img,
-  .gas-image {
-    animation: none !important;
-  }
-
-  /* Увеличиваем область клика для чекбоксов и радио */
-  input[type="checkbox"],
-  input[type="radio"] {
-    width: 24px;
-    height: 24px;
+  
+  /* Кнопка "Наверх" */
+  .back-to-top {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1em;
+    bottom: 20px;
+    right: 20px;
   }
 }
 
-/* Оптимизация для устройств с маленькими экранами */
-@media (max-width: 480px) and (hover: none) and (pointer: coarse) {
-  .header {
-    padding: 10px 3%;
-  }
-
-  .header .logo img {
-    height: 40px;
-  }
-
-  .header .logo h1 {
-    font-size: 1.3em;
-  }
-
+/* ===== Адаптация для маленьких экранов (до 400px) ===== */
+@media (max-width: 400px) {
   .hero-content h2 {
     font-size: 1.6em;
   }
-
+  
   .section-header h2 {
+    font-size: 1.6em;
+  }
+  
+  .gas-name {
     font-size: 1.5em;
   }
-
-  .advantage-card,
-  .value-card,
-  .team-member,
-  .stat-card,
-  .contact-card,
-  .step {
+  
+  .gas-price {
+    font-size: 1.5em;
+  }
+  
+  .stat-number {
+    font-size: 2em;
+  }
+  
+  .contact-card {
     padding: 25px 15px;
   }
-
-  .faq-question {
-    padding: 15px;
-  }
 }
 
-/* Оптимизация для очень маленьких экранов */
-@media (max-width: 360px) and (hover: none) and (pointer: coarse) {
-  .hero-content h2 {
-    font-size: 1.4em;
-  }
-
-  .header .logo h1 {
-    font-size: 1.1em;
-  }
-
-  .cta-button,
-  .order-button,
-  .submit-btn {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* Отключение анимаций для пользователей, предпочитающих reduced motion */
+/* ===== Оптимизации ===== */
+/* Для устройств с ограниченными ресурсами */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
     transition: none !important;
   }
-
-  .hero-image img,
-  .gas-image {
-    animation: none !important;
+  
+  html {
+    scroll-behavior: auto;
   }
 }
 
-/* Дополнительные улучшения для сенсорных устройств */
-.touch-device {
-  /* Увеличиваем размеры кликабельных элементов */
-  a, button, input[type="submit"], .btn {
-    min-width: 44px;
-    min-height: 44px;
-  }
+/* Для touch-устройств */
+.touch-device .animate {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
 
-  /* Увеличиваем отступы между элементами */
-  .advantages-grid,
-  .values-grid,
-  .team-grid {
-    gap: 20px;
-  }
-
-  /* Увеличиваем размер текста */
-  body {
-    font-size: 16px;
-  }
-
-  /* Улучшаем видимость фокуса */
-  a:focus, button:focus, input:focus, textarea:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
+/* Для устройств с высоким DPI */
+@media (-webkit-min-device-pixel-ratio: 2), 
+       (min-resolution: 192dpi) {
+  .hero-shape {
+    display: none;
   }
 }
 
