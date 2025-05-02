@@ -1753,252 +1753,221 @@ background-color: var(--primary-color);
 color: var(--white);
 }
 
-/* Удаляем старые медиазапросы и заменяем их современными */
+/* Адаптация для мобильных */
+/* Удалены все старые медиазапросы и добавлены новые для сенсорных устройств */
 
-/* ===== Общие мобильные стили ===== */
-@media (max-width: 767px) {
-  /* Шапка */
-  .header {
-    padding: 12px 4%;
+/* Основные стили для сенсорных устройств */
+@media (hover: none) and (pointer: coarse) {
+  /* Уменьшаем размеры кликабельных элементов */
+  .header .cta, 
+  .cta-button, 
+  .order-button, 
+  .submit-btn,
+  .testimonial-dot,
+  .social-links a,
+  .member-social a {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px 20px;
   }
-  
-  .header .logo img {
-    height: 42px;
+
+  /* Увеличиваем отступы для удобного касания */
+  .header nav ul li {
+    margin: 0 0 25px 0;
   }
-  
-  .header .logo h1 {
+
+  /* Убираем hover-эффекты */
+  .advantage-card:hover,
+  .value-card:hover,
+  .team-member:hover,
+  .stat-card:hover,
+  .contact-card:hover,
+  .step:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+  }
+
+  /* Увеличиваем размер текстовых полей */
+  .form-control {
+    padding: 18px;
+    font-size: 1.1em;
+  }
+
+  /* Увеличиваем размер иконок */
+  .social-links a,
+  .member-social a {
+    width: 50px;
+    height: 50px;
     font-size: 1.3em;
   }
-  
-  .header .logo p {
-    font-size: 0.7em;
+
+  /* Адаптация шапки */
+  .header {
+    padding: 12px 5%;
   }
-  
+
+  .header .logo img {
+    height: 50px;
+  }
+
   .header .cta {
-    padding: 8px 15px;
-    font-size: 0.8em;
+    padding: 12px 25px;
   }
-  
-  /* Мобильное меню */
-  .header nav {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: rgba(51, 51, 51, 0.98);
-    backdrop-filter: blur(5px);
-    padding: 20px 4%;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    transform: translateY(-150%);
-    transition: transform 0.3s ease;
-    z-index: 999;
-  }
-  
-  .header nav.active {
-    transform: translateY(0);
-  }
-  
-  .header nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .header nav ul li {
-    margin: 0;
-  }
-  
-  .hamburger {
-    display: block;
-    font-size: 1.4em;
-  }
-  
-  /* Герой-секция */
+
+  /* Адаптация героя */
   .hero-section {
-    padding: 100px 4% 60px;
-    flex-direction: column;
-    text-align: center;
+    padding: 120px 5% 80px;
   }
-  
-  .hero-content {
-    margin-bottom: 40px;
-  }
-  
+
   .hero-content h2 {
-    font-size: 1.8em;
-    line-height: 1.3;
+    font-size: 2em;
   }
-  
-  .hero-content p {
-    font-size: 1em;
-    margin-bottom: 25px;
-  }
-  
-  .cta-button {
-    padding: 12px 28px;
-    font-size: 1em;
-  }
-  
-  /* Общие стили секций */
-  .section-header {
-    margin-bottom: 40px;
-  }
-  
+
+  /* Адаптация секций */
   .section-header h2 {
     font-size: 1.8em;
   }
-  
+
   .section-header p {
     font-size: 1em;
-    padding: 0 10px;
   }
-  
-  /* Секция с ценами */
-  .pricing-section {
-    padding: 70px 4%;
-  }
-  
-  .gas-container {
-    flex-direction: column;
-    gap: 25px;
-  }
-  
-  .gas-block {
-    width: 100%;
-    max-width: 320px;
-    padding: 25px;
-  }
-  
-  .gas-image-container {
-    order: 2;
-    margin: 15px 0;
-  }
-  
-  /* Секция "Как мы работаем" */
-  .workflow-section {
-    padding: 70px 4%;
-  }
-  
-  .steps-container {
-    flex-direction: column;
-    gap: 25px;
-    padding-top: 0;
-  }
-  
-  .steps-line {
-    display: none;
-  }
-  
+
+  /* Адаптация карточек */
+  .advantage-card,
+  .value-card,
+  .team-member,
+  .stat-card,
+  .contact-card,
   .step {
-    width: 100%;
-    max-width: 320px;
-    padding: 25px;
+    padding: 30px 20px;
   }
-  
-  /* Секция "О нас" */
-  .about-section {
-    padding: 70px 4%;
-  }
-  
-  .about-container {
-    flex-direction: column;
-  }
-  
-  .about-stats {
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-  }
-  
-  /* FAQ секция */
-  .faq-section {
-    padding: 70px 4%;
-  }
-  
+
+  /* Адаптация FAQ */
   .faq-question {
-    padding: 16px 20px;
+    padding: 20px;
   }
-  
+
   .faq-question h3 {
-    font-size: 1em;
-    line-height: 1.4;
+    font-size: 1.1em;
   }
-  
-  /* Контакты */
-  .contacts-section {
-    padding: 70px 4%;
-  }
-  
-  .contact-form {
-    padding: 25px 20px;
-  }
-  
-  /* Подвал */
+
+  /* Адаптация подвала */
   .footer-content {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
-  /* Кнопка "Наверх" */
-  .back-to-top {
-    width: 44px;
-    height: 44px;
-    font-size: 1.1em;
-    bottom: 20px;
-    right: 20px;
+
+  /* Отключаем сложные анимации */
+  .animate {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-image img,
+  .gas-image {
+    animation: none !important;
+  }
+
+  /* Увеличиваем область клика для чекбоксов и радио */
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: 24px;
+    height: 24px;
   }
 }
 
-/* ===== Адаптация для маленьких экранов (до 400px) ===== */
-@media (max-width: 400px) {
+/* Оптимизация для устройств с маленькими экранами */
+@media (max-width: 480px) and (hover: none) and (pointer: coarse) {
+  .header {
+    padding: 10px 3%;
+  }
+
+  .header .logo img {
+    height: 40px;
+  }
+
+  .header .logo h1 {
+    font-size: 1.3em;
+  }
+
   .hero-content h2 {
     font-size: 1.6em;
   }
-  
+
   .section-header h2 {
-    font-size: 1.6em;
-  }
-  
-  .gas-name {
     font-size: 1.5em;
   }
-  
-  .gas-price {
-    font-size: 1.5em;
-  }
-  
-  .stat-number {
-    font-size: 2em;
-  }
-  
-  .contact-card {
+
+  .advantage-card,
+  .value-card,
+  .team-member,
+  .stat-card,
+  .contact-card,
+  .step {
     padding: 25px 15px;
+  }
+
+  .faq-question {
+    padding: 15px;
   }
 }
 
-/* ===== Оптимизации ===== */
-/* Для устройств с ограниченными ресурсами */
+/* Оптимизация для очень маленьких экранов */
+@media (max-width: 360px) and (hover: none) and (pointer: coarse) {
+  .hero-content h2 {
+    font-size: 1.4em;
+  }
+
+  .header .logo h1 {
+    font-size: 1.1em;
+  }
+
+  .cta-button,
+  .order-button,
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Отключение анимаций для пользователей, предпочитающих reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
     transition: none !important;
   }
-  
-  html {
-    scroll-behavior: auto;
+
+  .hero-image img,
+  .gas-image {
+    animation: none !important;
   }
 }
 
-/* Для touch-устройств */
-.touch-device .animate {
-  animation: none !important;
-  opacity: 1 !important;
-  transform: none !important;
-}
+/* Дополнительные улучшения для сенсорных устройств */
+.touch-device {
+  /* Увеличиваем размеры кликабельных элементов */
+  a, button, input[type="submit"], .btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
 
-/* Для устройств с высоким DPI */
-@media (-webkit-min-device-pixel-ratio: 2), 
-       (min-resolution: 192dpi) {
-  .hero-shape {
-    display: none;
+  /* Увеличиваем отступы между элементами */
+  .advantages-grid,
+  .values-grid,
+  .team-grid {
+    gap: 20px;
+  }
+
+  /* Увеличиваем размер текста */
+  body {
+    font-size: 16px;
+  }
+
+  /* Улучшаем видимость фокуса */
+  a:focus, button:focus, input:focus, textarea:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
   }
 }
 
@@ -2106,127 +2075,3 @@ max-height: 500px;
 }
 }
 
-/* Добавьте эти стили в конец вашего CSS файла */
-
-/* Устраняем горизонтальный скролл и пустое пространство справа */
-body {
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
-}
-
-/* Дополнительные исправления для конкретных элементов */
-@media (max-width: 767px) {
-  /* Убедимся, что все секции занимают 100% ширины */
-  .hero-section,
-  .pricing-section,
-  .advantages-section,
-  .workflow-section,
-  .about-section,
-  .faq-section,
-  .contacts-section,
-  .footer {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-  }
-
-  /* Исправляем ширину контента */
-  .header,
-  .section-header,
-  .hero-content,
-  .gas-container,
-  .advantages-grid,
-  .steps-container,
-  .about-container,
-  .faq-container,
-  .contacts-container,
-  .footer-content {
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-  }
-
-  /* Особое внимание изображениям */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Фикс для hero-section */
-  .hero-section {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  /* Фикс для декоративных элементов */
-  .hero-shape {
-    right: -150px;
-  }
-}
-
-/* Дополнительный фикс для очень маленьких экранов */
-@media (max-width: 400px) {
-  body {
-    min-width: 320px;
-  }
-  
-  .header,
-  .hero-section,
-  .section-header {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-/* 1. Исправление для hero-section */
-.hero-section {
-    overflow: hidden;
-    position: relative;
-}
-
-.hero-shape {
-    right: -150px; /* Уменьшаем выступ */
-    width: 500px; /* Уменьшаем размер */
-}
-
-@media (max-width: 768px) {
-    .hero-shape {
-        display: none; /* Полностью скрываем на мобильных */
-    }
-}
-
-/* 2. Исправление для pricing-section */
-.pricing-section {
-    overflow: hidden;
-}
-
-.gas-container {
-    max-width: 100%;
-    padding: 0 15px;
-}
-
-/* 3. Глобальные исправления */
-body {
-    overflow-x: hidden;
-    position: relative;
-}
-
-* {
-    max-width: 100%; /* Гарантируем, что ничего не выйдет за границы */
-}
-
-/* 4. Специфичные исправления для таблицы */
-.composition-bar {
-    max-width: 100%;
-    overflow: hidden;
-}
-
-/* 5. Для очень маленьких экранов */
-@media (max-width: 360px) {
-    .propane-part, 
-    .butane-part {
-        font-size: 0.8em;
-        padding: 0 5px;
-    }
-}
