@@ -11,7 +11,7 @@
   --transition: all 0.3s ease;
 }
 
-/* Базовые стили */
+/* Базовые стили (общие для всех устройств) */
 * {
   margin: 0;
   padding: 0;
@@ -24,305 +24,45 @@ body {
   color: var(--dark-color);
   line-height: 1.6;
   overflow-x: hidden;
-  font-size: 16px;
 }
 
-/* Шапка */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 5%;
-  background-color: var(--dark-color);
-  color: var(--white);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.header.scrolled {
-  padding: 10px 5%;
-  background-color: rgba(51, 51, 51, 0.98);
-}
-
-.header .logo {
-  display: flex;
-  align-items: center;
-}
-
-.header .logo img {
-  height: 60px;
-  margin-right: 15px;
-  transition: var(--transition);
-}
-
-.header.scrolled .logo img {
-  height: 50px;
-}
-
-.header .logo h1 {
-  margin: 0;
-  font-size: 1.8em;
-  font-family: 'Russo One', sans-serif;
-  letter-spacing: 1px;
-}
-
-.header nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.header nav ul li {
-  margin-left: 30px;
-  position: relative;
-}
-
-.header nav ul li a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 5px 0;
-  position: relative;
-}
-
-.header nav ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--primary-color);
-  transition: var(--transition);
-}
-
-.header nav ul li a:hover::after {
-  width: 100%;
-}
-
-.header .cta {
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: 10px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  border: 2px solid var(--primary-color);
-  transition: var(--transition);
-}
-
-.header .cta:hover {
-  background-color: transparent;
-  color: var(--primary-color);
-}
-
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--white);
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
-/* Герой секция */
-.hero-section {
-  display: flex;
-  align-items: center;
-  padding: 150px 5% 100px;
-  background: linear-gradient(135deg, #f4f4f4 0%, #e6f0fa 100%);
-}
-
-.hero-content {
-  flex: 1;
-  max-width: 600px;
-}
-
-.hero-content h2 {
-  font-size: 3em;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.hero-content h2 span {
-  color: var(--primary-color);
-}
-
-.hero-content p {
-  font-size: 1.1em;
-  margin-bottom: 30px;
-  color: var(--gray);
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: 15px 35px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  border: 2px solid var(--primary-color);
-  transition: var(--transition);
-}
-
-.cta-button:hover {
-  background-color: transparent;
-  color: var(--primary-color);
-}
-
-.hero-image {
-  flex: 1;
-  position: relative;
-}
-
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Секция с газами */
-.pricing-section {
-  padding: 100px 5%;
-  background: linear-gradient(135deg, #e6f0fa 0%, #d4e6f8 100%);
-}
-
-.gas-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 60px;
-  flex-wrap: wrap;
-}
-
-.gas-block {
-  width: 280px;
-  padding: 30px;
-  background-color: var(--white);
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-
-.gas-image {
-  max-height: 300px;
-  width: auto;
-  margin: 0 auto;
-}
-
-/* FAQ секция */
-.faq-section {
-  padding: 100px 5%;
-  background-color: var(--light-color);
-}
-
-.faq-item {
-  margin-bottom: 15px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-
-.faq-question {
-  padding: 15px 20px;
-  background-color: var(--primary-color);
-  color: var(--white);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  background-color: var(--white);
-}
-
-.faq-item.active .faq-answer {
-  max-height: 500px;
-  padding: 20px;
-}
-
-/* Форма */
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 40px;
-  background-color: var(--white);
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-}
-
-.form-control {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.submit-btn {
-  width: 100%;
-  padding: 15px;
-  background: var(--primary-color);
-  color: var(--white);
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.submit-btn:hover {
-  background: var(--primary-dark);
-}
-
-/* Адаптация для мобильных */
-@media (max-width: 992px) {
-  .hero-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 120px 5% 80px;
+/* Мобильная адаптация */
+@media only screen and (max-width: 767px) {
+  /* Общие изменения */
+  body {
+    font-size: 14px;
   }
   
-  .hero-content {
-    margin-bottom: 40px;
+  section {
+    padding: 30px 4% !important;
   }
   
-  .hero-image img {
-    max-width: 80%;
-  }
-  
-  .gas-container {
-    flex-direction: column;
-  }
-  
-  .gas-block {
-    margin-bottom: 30px;
-  }
-}
-
-@media (max-width: 768px) {
+  /* Шапка */
   .header {
     flex-wrap: wrap;
+    padding: 10px 4% !important;
+    position: relative;
+  }
+  
+  .header .logo img {
+    height: 40px !important;
+    margin-right: 10px !important;
+  }
+  
+  .header .logo h1 {
+    font-size: 1.2em !important;
   }
   
   .hamburger {
-    display: block;
+    display: block !important;
+    order: 2;
   }
   
   .header nav {
     width: 100%;
+    order: 4;
     display: none;
-    margin-top: 15px;
+    margin-top: 10px;
   }
   
   .header nav.active {
@@ -331,69 +71,108 @@ body {
   
   .header nav ul {
     flex-direction: column;
+    background: rgba(0,0,0,0.9);
+    padding: 15px;
+    border-radius: 8px;
   }
   
   .header nav ul li {
-    margin: 10px 0 !important;
+    margin: 8px 0 !important;
   }
   
   .header .cta {
-    margin: 10px auto 0;
-    display: block;
-    width: max-content;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    padding: 8px 15px !important;
+    font-size: 0.9em !important;
   }
   
-  .header {
-    padding: 10px 3% !important;
-  }
-  
-  .header .logo img {
-    height: 40px !important;
-  }
-  
-  .header .logo h1 {
-    font-size: 1.3em !important;
+  /* Герой-секция */
+  .hero-section {
+    flex-direction: column;
+    padding: 100px 4% 50px !important;
+    text-align: center;
   }
   
   .hero-content h2 {
     font-size: 1.8em !important;
+    margin-bottom: 15px !important;
   }
   
-  .cta-button, .order-button {
-    padding: 12px 25px !important;
+  .hero-image img {
+    max-width: 90% !important;
+    margin-top: 30px;
+  }
+  
+  /* Блоки с газами */
+  .gas-container {
+    flex-direction: column;
+    gap: 20px;
   }
   
   .gas-block {
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 300px !important;
     padding: 20px !important;
+    margin: 0 auto !important;
   }
   
   .gas-image {
-    max-height: 200px !important;
+    max-height: 180px !important;
+    width: auto !important;
   }
   
+  /* FAQ секция */
+  .faq-question {
+    padding: 12px 15px !important;
+  }
+  
+  .faq-answer {
+    padding: 0 15px !important;
+  }
+  
+  /* Форма */
   .contact-form {
-    padding: 25px 15px;
+    padding: 20px 15px !important;
   }
   
   .form-control {
-    padding: 12px !important;
+    padding: 12px 15px !important;
+  }
+  
+  /* Кнопки */
+  .cta-button, .order-button, .submit-btn {
+    padding: 10px 20px !important;
+    font-size: 0.9em !important;
+    display: inline-block !important;
+    width: auto !important;
+  }
+  
+  /* Отключение сложных анимаций */
+  .animate {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .hero-image img {
+    animation: none !important;
   }
 }
 
-@media (max-width: 360px) {
+/* Дополнительные мелкие экраны */
+@media only screen and (max-width: 400px) {
   .hero-content h2 {
-    font-size: 1.5em !important;
+    font-size: 1.6em !important;
   }
   
   .header .logo h1 {
     font-size: 1.1em !important;
+  }
+  
+  .gas-image {
+    max-height: 150px !important;
   }
 }
