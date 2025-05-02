@@ -1755,154 +1755,228 @@ color: var(--white);
 
 /* Адаптация для мобильных */
 @media (max-width: 768px) {
-.about-container {
-    flex-direction: column;
-}
+    /* Общие стили для мобильных устройств */
+    body {
+        font-size: 14px; /* Уменьшаем размер шрифта для лучшей читаемости */
+    }
 
-.about-content, .about-stats {
-    width: 100%;
-}
+    .header {
+        padding: 10px 3%; /* Уменьшаем отступы */
+    }
 
-.about-stats {
-    grid-template-columns: 1fr 1fr;
-}
+    .header .logo img {
+        height: 40px; /* Уменьшаем размер логотипа */
+    }
 
-.team-grid {
-    grid-template-columns: 1fr 1fr;
-}
+    .header .logo h1 {
+        font-size: 1.2em; /* Уменьшаем размер шрифта */
+    }
+
+    .header .logo p {
+        font-size: 0.7em; /* Уменьшаем размер шрифта */
+    }
+
+    .header .cta {
+        padding: 8px 15px; /* Уменьшаем размер кнопки */
+        font-size: 0.8em; /* Уменьшаем размер шрифта */
+    }
+
+    .hero-section {
+        padding: 80px 3% 50px; /* Уменьшаем отступы */
+        flex-direction: column; /* Ставим контент в столбец */
+        text-align: center; /* Выравниваем текст по центру */
+    }
+
+    .hero-content h2 {
+        font-size: 1.6em; /* Уменьшаем размер шрифта */
+    }
+
+    .hero-content p {
+        font-size: 1em; /* Уменьшаем размер шрифта */
+    }
+
+    .cta-button {
+        padding: 12px 25px; /* Уменьшаем размер кнопки */
+        font-size: 1em; /* Уменьшаем размер шрифта */
+    }
+
+    .gas-container {
+        flex-direction: column; /* Ставим контент в столбец */
+    }
+
+    .gas-image-container {
+        order: 2; /* Меняем порядок элементов */
+        margin: 30px 0; /* Добавляем отступы */
+    }
+
+    .left-block, .right-block {
+        order: unset; /* Сбрасываем порядок */
+        width: 100%; /* Занимаем всю ширину */
+        max-width: 400px; /* Ограничиваем максимальную ширину */
+    }
+
+    .steps-line {
+        display: none; /* Скрываем линию */
+    }
+
+    .steps-container {
+        padding-top: 0; /* Сбрасываем отступы */
+    }
+
+    .about-content {
+        flex-direction: column; /* Ставим контент в столбец */
+    }
+
+    .about-image {
+        max-width: 600px; /* Ограничиваем максимальную ширину */
+        margin: 0 auto; /* Выравниваем по центру */
+    }
+
+    .faq-section {
+        padding: 60px 3%; /* Уменьшаем отступы */
+    }
+
+    .faq-question {
+        padding: 15px 20px; /* Уменьшаем отступы */
+    }
+
+    .faq-question h3 {
+        font-size: 1em; /* Уменьшаем размер шрифта */
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 15px 20px; /* Уменьшаем отступы */
+    }
 }
 
 @media (max-width: 480px) {
-.about-section {
-    padding: 60px 3%;
-}
+    /* Стили для очень маленьких экранов */
+    .header {
+        padding: 8px 2%; /* Еще меньше отступы */
+    }
 
-.about-content {
-    padding: 25px;
-}
+    .header .logo img {
+        height: 35px; /* Еще меньше размер логотипа */
+    }
 
-.about-stats {
-    grid-template-columns: 1fr;
-}
+    .header .logo h1 {
+        font-size: 1.1em; /* Еще меньше размер шрифта */
+    }
 
-.team-grid {
-    grid-template-columns: 1fr;
-}
-}
+    .header .logo p {
+        font-size: 0.6em; /* Еще меньше размер шрифта */
+    }
 
-/* Добавьте это в конец файла style.css */
-html {
-scroll-behavior: smooth;
-}
+    .header .cta {
+        padding: 6px 12px; /* Еще меньше размер кнопки */
+        font-size: 0.7em; /* Еще меньше размер шрифта */
+    }
 
-/* Для старых браузеров, где не поддерживается scroll-behavior */
-@media screen and (prefers-reduced-motion: reduce) {
-html {
-    scroll-behavior: auto;
-}
-}
+    .hero-section {
+        padding: 60px 2% 40px; /* Еще меньше отступы */
+    }
 
-/* Добавьте это в конец файла style.css */
-.contact-form p {
-color: #000000; /* Серый цвет, можно изменить на любой другой */
-margin-bottom: 20px;
-font-size: 1em;
-}
+    .hero-content h2 {
+        font-size: 1.4em; /* Еще меньше размер шрифта */
+    }
 
-.contact-form h3 {
-color: #000000; /* Здесь указывается желаемый цвет */
-}
+    .hero-content p {
+        font-size: 0.9em; /* Еще меньше размер шрифта */
+    }
 
-/* Стили для секции FAQ */
-.faq-section {
-padding: 100px 5%;
-background-color: var(--light-color);
-}
+    .cta-button {
+        padding: 10px 20px; /* Еще меньше размер кнопки */
+        font-size: 0.9em; /* Еще меньше размер шрифта */
+    }
 
-.faq-container {
-max-width: 800px;
-margin: 0 auto;
-}
+    .gas-block {
+        padding: 15px; /* Уменьшаем отступы */
+        width: 100%; /* Занимаем всю ширину */
+    }
 
-.faq-item {
-margin-bottom: 15px;
-border-radius: 8px;
-overflow: hidden;
-box-shadow: var(--shadow);
-transition: var(--transition);
-}
+    .gas-name {
+        font-size: 1.3em; /* Уменьшаем размер шрифта */
+    }
 
-.faq-item:hover {
-box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
+    .gas-price {
+        font-size: 1.3em; /* Уменьшаем размер шрифта */
+    }
 
-.faq-question {
-padding: 20px 25px;
-background-color: var(--white);
-display: flex;
-justify-content: space-between;
-align-items: center;
-cursor: pointer;
-transition: var(--transition);
-}
+    .advantages-section {
+        padding: 50px 2%; /* Уменьшаем отступы */
+    }
 
-.faq-question h3 {
-font-size: 1.1em;
-color: var(--dark-color);
-margin: 0;
-flex: 1;
-}
+    .advantage-card {
+        padding: 25px 15px; /* Уменьшаем отступы */
+    }
 
-.faq-question i {
-margin-left: 15px;
-transition: var(--transition);
-}
+    .advantage-icon {
+        width: 50px; /* Уменьшаем размер иконки */
+        height: 50px; /* Уменьшаем размер иконки */
+        font-size: 1.2em; /* Уменьшаем размер шрифта */
+    }
 
-.faq-answer {
-padding: 0;
-max-height: 0;
-overflow: hidden;
-background-color: var(--white);
-transition: var(--transition);
-}
+    .workflow-section {
+        padding: 50px 2%; /* Уменьшаем отступы */
+    }
 
-.faq-answer p {
-padding: 0 25px 0;
-margin: 0;
-color: var(--gray);
-line-height: 1.7;
-}
+    .step {
+        width: 100%; /* Занимаем всю ширину */
+        padding: 20px; /* Уменьшаем отступы */
+    }
 
-.faq-item.active .faq-question {
-background-color: var(--primary-color);
-color: var(--white);
-}
+    .testimonial-card {
+        min-width: 240px; /* Уменьшаем минимальную ширину */
+        padding: 25px 15px; /* Уменьшаем отступы */
+    }
 
-.faq-item.active .faq-question h3 {
-color: var(--white);
-}
+    .client-photo {
+        width: 70px; /* Уменьшаем размер фото */
+        height: 70px; /* Уменьшаем размер фото */
+    }
 
-.faq-item.active .faq-question i {
-transform: rotate(180deg);
-color: var(--white);
-}
+    .contacts-section {
+        padding: 50px 2%; /* Уменьшаем отступы */
+    }
 
-.faq-item.active .faq-answer {
-padding: 20px 25px;
-max-height: 500px;
-}
+    .contact-card {
+        padding: 25px 15px; /* Уменьшаем отступы */
+    }
 
-@media (max-width: 768px) {
-.faq-question {
-    padding: 15px 20px;
-}
+    .contact-form {
+        padding: 20px 10px; /* Уменьшаем отступы */
+    }
 
-.faq-question h3 {
-    font-size: 1em;
-}
+    .footer {
+        padding: 40px 2% 20px; /* Уменьшаем отступы */
+    }
 
-.faq-item.active .faq-answer {
-    padding: 15px 20px;
-}
-}
+    .footer-logo h3 {
+        font-size: 1.3em; /* Уменьшаем размер шрифта */
+    }
 
+    .footer-links h4, .footer-contact h4 {
+        font-size: 1em; /* Уменьшаем размер шрифта */
+    }
+
+    .back-to-top {
+        width: 35px; /* Уменьшаем размер */
+        height: 35px; /* Уменьшаем размер */
+        font-size: 0.9em; /* Уменьшаем размер шрифта */
+        bottom: 15px; /* Смещаем вниз */
+        right: 15px; /* Смещаем вправо */
+    }
+
+    .experience-badge {
+        width: 70px; /* Уменьшаем размер */
+        height: 70px; /* Уменьшаем размер */
+    }
+
+    .experience-badge .years {
+        font-size: 1.2em; /* Уменьшаем размер шрифта */
+    }
+
+    .experience-badge .text {
+        font-size: 0.6em; /* Уменьшаем размер шрифта */
+    }
+}
