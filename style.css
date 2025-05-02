@@ -1903,5 +1903,26 @@ max-height: 500px;
 
 .faq-item.active .faq-answer {
     padding: 15px 20px;
+
+  /* Добавьте этот медиа-запрос в конец вашего файла стилей */
+@media (max-width: 768px) {
+  .composition-bar {
+    height: 25px; /* Уменьшаем высоту в 2 раза */
+    border-radius: 12.5px; /* Соответственно уменьшаем радиус скругления */
+  }
+  
+  .propane-part, .butane-part {
+    font-size: 0.55em; /* Уменьшаем размер шрифта */
+  }
+  
+  .gas-composition {
+    margin-bottom: 25px; /* Уменьшаем отступ */
+  }
+  
+  .composition-title {
+    font-size: 0.9em; /* Уменьшаем размер шрифта заголовка */
+    margin-bottom: 10px; /* Уменьшаем отступ */
+  }
+}
 }
 }
