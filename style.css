@@ -981,10 +981,6 @@ body {
   .steps-container {
     padding-top: 0;
   }
-
-  .about-content {
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 768px) {
@@ -1200,7 +1196,6 @@ html {
     font-size: 14px;
   }
 
-  /* Шапка */
   .header {
     padding: 8px 3%;
   }
@@ -1222,7 +1217,6 @@ html {
     font-size: 0.7em;
   }
 
-  /* Главный баннер */
   .hero-section {
     padding: 80px 3% 40px;
     flex-direction: column;
@@ -1237,7 +1231,6 @@ html {
     font-size: 0.9em;
   }
 
-  /* Секция цен */
   .pricing-section {
     padding: 40px 15px;
   }
@@ -1296,7 +1289,6 @@ html {
     display: block;
   }
 
-  /* Преимущества */
   .advantages-grid {
     grid-template-columns: 1fr;
   }
@@ -1305,7 +1297,6 @@ html {
     padding: 20px;
   }
 
-  /* Как мы работаем */
   .steps-container {
     flex-direction: column;
     gap: 20px;
@@ -1316,47 +1307,19 @@ html {
     padding: 20px;
   }
 
-  /* О нас */
   .about-container {
     flex-direction: column;
   }
 
-  /* Контакты */
   .contacts-container {
     grid-template-columns: 1fr;
   }
 
-  /* Подвал */
   .footer-content {
     grid-template-columns: 1fr;
   }
 }
 
-/* Дополнительные правки для очень маленьких экранов */
-@media (max-width: 400px) {
-  .gas-image-container {
-    max-width: 250px;
-  }
-  
-  .gas-image {
-    max-height: 160px;
-  }
-
-  .gas-name {
-    font-size: 1.3em;
-  }
-
-  .gas-price {
-    font-size: 1.3em;
-  }
-
-  .order-button {
-    padding: 8px 15px;
-    font-size: 0.85em;
-  }
-}
-
-/* Анимации для мобильных */
 @media (max-width: 767px) {
   .animate {
     animation: none !important;
@@ -1366,71 +1329,5 @@ html {
   .hero-image img, 
   .gas-image {
     animation: none !important;
-  }
-}
-
-/* Добавьте это в самый конец файла style.css */
-
-/* Оптимизация для мобильных устройств */
-@media (max-width: 767px) {
-  .hero-section {
-    flex-direction: column;
-    padding: 100px 4% 60px;
-  }
-  
-  .hero-image {
-    order: -1; /* Перемещаем картинку вверх */
-    margin-bottom: 30px;
-    width: 100%;
-    max-width: 350px; /* Ограничиваем максимальную ширину */
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .hero-image img {
-    max-height: 250px; /* Фиксированная высота для мобильных */
-    width: auto;
-    animation: none; /* Убираем анимацию на мобильных */
-  }
-  
-  .hero-content {
-    text-align: center;
-  }
-  
-  .hero-content h2 {
-    font-size: 1.8em;
-  }
-  
-  .cta-button {
-    padding: 12px 25px;
-    font-size: 1em;
-  }
-  
-  /* Дополнительные оптимизации для других секций */
-  .gas-image {
-    max-height: 200px;
-  }
-  
-  .section-header h2 {
-    font-size: 1.8em;
-  }
-  
-  .section-header p {
-    font-size: 1em;
-  }
-}
-
-/* Для очень маленьких экранов (до 400px) */
-@media (max-width: 400px) {
-  .hero-image img {
-    max-height: 200px;
-  }
-  
-  .hero-content h2 {
-    font-size: 1.6em;
-  }
-  
-  .gas-image {
-    max-height: 150px;
   }
 }
