@@ -1336,3 +1336,11 @@ html {
 .contact-form p {
   color: var(--dark-color) !important;
 }
+
+@media (max-width: 767px) {
+  .gas-image-container img {
+    max-width: 80%; /* Уменьшает ширину до 80% от родителя */
+    height: auto; /* Сохраняет пропорции */
+    margin: 0 auto; /* Центрирует */
+  }
+}
