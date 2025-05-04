@@ -71,115 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ===== Карусель отзывов =====
-    const testimonialContainer = document.querySelector('.testimonials-container');
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    const testimonialDots = document.querySelectorAll('.testimonial-dot');
-    const prevBtn = document.querySelector('.testimonial-prev');
-    const nextBtn = document.querySelector('.testimonial-next');
-    
-    if (testimonialContainer && testimonialCards.length > 0) {
-        let currentIndex = 0;
-        let autoScrollInterval;
-
-        // Рассчитываем ширину карточки с учетом gap
-        function getCardWidth() {
-            const cardStyle = window.getComputedStyle(testimonialCards[0]);
-            const cardWidth = testimonialCards[0].offsetWidth;
-            const gap = parseInt(window.getComputedStyle(testimonialContainer).gap) || 30;
-            return cardWidth + gap;
-        }
-
-        function updateTestimonials() {
-            const cardWidth = getCardWidth();
-            const scrollPosition = currentIndex * cardWidth;
-            
-            testimonialContainer.scrollTo({
-                left: scrollPosition,
-                behavior: 'smooth'
-            });
-
-            // Обновляем активную точку
-            testimonialDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-            });
-        }
-
-        // Обработчики для точек
-        testimonialDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentIndex = index;
-                updateTestimonials();
-                resetAutoScroll();
-            });
-        });
-
-        // Кнопка "Назад"
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + testimonialCards.length) % testimonialCards.length;
-                updateTestimonials();
-                resetAutoScroll();
-            });
-        }
-
-        // Кнопка "Вперед"
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % testimonialCards.length;
-                updateTestimonials();
-                resetAutoScroll();
-            });
-        }
-
-        // Автопрокрутка
-        function startAutoScroll() {
-            autoScrollInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % testimonialCards.length;
-                updateTestimonials();
-            }, 5000);
-        }
-
-        function resetAutoScroll() {
-            clearInterval(autoScrollInterval);
-            startAutoScroll();
-        }
-
-        // Остановка автопрокрутки при наведении
-        testimonialContainer.addEventListener('mouseenter', () => {
-            clearInterval(autoScrollInterval);
-        });
-
-        testimonialContainer.addEventListener('mouseleave', startAutoScroll);
-
-        // Инициализация
-        updateTestimonials();
-        startAutoScroll();
-
-        // Очистка интервала при закрытии страницы
-        window.addEventListener('beforeunload', () => {
-            clearInterval(autoScrollInterval);
-        });
-    }
-
-    // ===== Анимации при скролле =====
-    const animateElements = document.querySelectorAll('.animate');
-    
-    function checkAnimation() {
-        animateElements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (elementPosition < screenPosition) {
-                element.style.animationPlayState = 'running';
-            }
-        });
-    }
-
-    // Запускаем проверку при загрузке и скролле
-    window.addEventListener('load', checkAnimation);
-    window.addEventListener('scroll', checkAnimation);
-
     // ===== Маска для телефона =====
     const phoneInput = document.getElementById('phone');
     if (phoneInput) {
@@ -225,23 +116,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== Обнаружение touch-устройств =====
-    function detectTouchDevice() {
-        try {
-            document.createEvent('TouchEvent');
-            document.body.classList.add('touch-device');
-            return true;
-        } catch (e) {
-            document.body.classList.remove('touch-device');
-            return false;
-        }
+    // ===== FAQ Accordion =====
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            item.classList.toggle('active');
+            
+            // Закрываем другие открытые вопросы
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // ===== Анимации при скролле =====
+    const animateElements = document.querySelectorAll('.animate');
+    
+    function checkAnimation() {
+        animateElements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.style.animationPlayState = 'running';
+            }
+        });
     }
 
-    detectTouchDevice();
-    window.addEventListener('resize', detectTouchDevice);
+    // Запускаем проверку при загрузке и скролле
+    window.addEventListener('load', checkAnimation);
+    window.addEventListener('scroll', checkAnimation);
 });
 
-// Добавьте этот код в script.js для анимации счетчиков
+// Анимация счетчиков
 function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
     const speed = 200;
@@ -260,11 +169,8 @@ function animateCounters() {
     });
 }
 
-// Вызовите эту функцию при появлении секции в области видимости
+// Вызов анимации счетчиков при появлении секции в области видимости
 function checkAnimation() {
-    // ... (существующий код) ...
-    
-    // Добавьте проверку для секции "О нас"
     const aboutSection = document.querySelector('.about-section');
     if (aboutSection) {
         const aboutPosition = aboutSection.getBoundingClientRect().top;
@@ -276,19 +182,5 @@ function checkAnimation() {
     }
 }
 
-// FAQ Accordion
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-        const item = question.parentElement;
-        item.classList.toggle('active');
-        
-        // Закрываем другие открытые вопросы
-        document.querySelectorAll('.faq-item').forEach(otherItem => {
-            if (otherItem !== item && otherItem.classList.contains('active')) {
-                otherItem.classList.remove('active');
-            }
-        });
-    });
-});
-
-app.use('/textolite', express.static(path.join(__dirname, 'my-website/textolite')));
+window.addEventListener('scroll', checkAnimation);
+window.addEventListener('load', checkAnimation);
