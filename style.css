@@ -1331,3 +1331,8 @@ html {
     animation: none !important;
   }
 }
+
+.contact-form h3,
+.contact-form p {
+  color: var(--dark-color) !important;
+}
