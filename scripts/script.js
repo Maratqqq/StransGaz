@@ -108,15 +108,24 @@ if (contactForm) {
 
     if (isValid) {
       // Отправка данных на Google Sheets
-      const formData = new FormData(contactForm);
-      fetch(contactForm.action, {
+      const formData = {
+        name: nameInput.value,
+        phone: phoneInput.value,
+        message: document.getElementById('message').value,
+        spreadsheetId: '1uT_EFj7KPawcAWvSq7Vev7gAeFVPHFFlxW6fVCEcmf4' // ID вашей таблицы Google Sheets
+      };
+
+      fetch('https://script.google.com/macros/s/AKfycbxX6DFCa03UReOlqt3OtNenMp6muhkdOS3QqhbcG1o5eGdS6QyZW6WiQxe1Tlfy7gO/exec', {
         method: 'POST',
-        body: formData
+        headers: {
+         'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       })
       .then(response => response.text())
       .then(data => {
         if (data === 'Success') {
-          alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+          alert('Спасибо! Ваша заявка отправлена.');
           contactForm.reset();
         } else {
           alert('Ошибка: ' + data);
@@ -131,7 +140,6 @@ if (contactForm) {
     }
   });
 }
-
     // ===== FAQ Accordion =====
     document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
