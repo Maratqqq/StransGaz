@@ -505,10 +505,6 @@
                 try {
                     await fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`);
                     alert("Спасибо! Мы свяжемся с вами.");
-                    form.reset();
-                } catch (err) {
-                    alert("Ошибка отправки. Попробуйте позже.");
-                }
             });
         </script>
     </div>
