@@ -81,40 +81,56 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===== Обработка формы =====
-    const contactForm = document.querySelector('.contact-form form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Валидация полей
-            const nameInput = document.getElementById('name');
-            const phoneInput = document.getElementById('phone');
-            let isValid = true;
+const contactForm = document.querySelector('.contact-form form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-            if (!nameInput.value.trim()) {
-                isValid = false;
-                nameInput.style.borderColor = 'red';
-            } else {
-                nameInput.style.borderColor = '#ddd';
-            }
+    // Валидация полей
+    const nameInput = document.getElementById('name');
+    const phoneInput = document.getElementById('phone');
+    let isValid = true;
 
-            const phoneRegex = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
-            if (!phoneRegex.test(phoneInput.value)) {
-                isValid = false;
-                phoneInput.style.borderColor = 'red';
-            } else {
-                phoneInput.style.borderColor = '#ddd';
-            }
-
-            if (isValid) {
-                // Здесь можно добавить AJAX-отправку формы
-                alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
-                this.reset();
-            } else {
-                alert('Пожалуйста, заполните все поля корректно.');
-            }
-        });
+    if (!nameInput.value.trim()) {
+      isValid = false;
+      nameInput.style.borderColor = 'red';
+    } else {
+      nameInput.style.borderColor = '#ddd';
     }
+
+    const phoneRegex = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+    if (!phoneRegex.test(phoneInput.value)) {
+      isValid = false;
+      phoneInput.style.borderColor = 'red';
+    } else {
+      phoneInput.style.borderColor = '#ddd';
+    }
+
+    if (isValid) {
+      // Отправка данных на Google Sheets
+      const formData = new FormData(contactForm);
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        if (data === 'Success') {
+          alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+          contactForm.reset();
+        } else {
+          alert('Ошибка: ' + data);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Произошла ошибка. Пожалуйста, попробуйте снова.');
+      });
+    } else {
+      alert('Пожалуйста, заполните все поля корректно.');
+    }
+  });
+}
 
     // ===== FAQ Accordion =====
     document.querySelectorAll('.faq-question').forEach(question => {
