@@ -477,27 +477,48 @@
             <p>Заполните форму и мы свяжемся с вами в ближайшее время</p>
             
             <!-- Начало формы -->
-            <form>
-                <!-- Группа полей для имени -->
-                <div class="form-group">
-                    <label for="name">Ваше имя</label> <!-- Подпись поля -->
-                    <input type="text" id="name" class="form-control" placeholder="Иван Иванов" required>
-                </div>
-                
-                <!-- Группа полей для телефона -->
-                <div class="form-group">
-                    <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" class="form-control" placeholder="+7 (___) ___-__-__" required>
-                </div>
-                
-                <!-- Группа полей для сообщения -->
-                <div class="form-group">
-                    <label for="message">Ваш вопрос</label>
-                    <textarea id="message" class="form-control" placeholder="Опишите ваш вопрос или заказ"></textarea>
-                </div>
-                
-                <!-- Кнопка отправки формы -->
-                <button type="submit" class="submit-btn">Отправить заявку</button>
+<div class="contact-form animate animate-delay-4">
+  <h3>Заказать</h3>
+  <p>Заполните форму и мы свяжемся с вами в ближайшее время</p>
+
+  <!-- НАЧАЛО НОВОЙ ФОРМЫ -->
+  <form id="myForm">
+    <div class="form-group">
+      <label for="name">Ваше имя</label>
+      <input type="text" id="name" class="form-control" placeholder="Иван Иванов" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" class="form-control" placeholder="+7 (___) ___-__-__" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Ваш вопрос</label>
+      <textarea id="message" class="form-control" placeholder="Опишите ваш вопрос или заказ"></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Отправить заявку</button>
+  </form>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const data = {
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        message: document.getElementById("message").value
+      };
+      
+      fetch("https://script.google.com/macros/s/AKfycbwlLbnS5HG0dU9fFalbDkz7X6eSE4WKuqBjUcGfKgy44WapwvNmrgSYbQHTaIRRq7rb-g/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
+      })
+        .then(() => alert("Спасибо! Ваша заявка отправлена."))
+        .catch(() => alert("Ошибка отправки. Попробуйте позже."));
+    });
+  </script>
+  <!-- КОНЕЦ НОВОЙ ФОРМЫ -->
+</div>
             </form>
         </div>
     </section>
