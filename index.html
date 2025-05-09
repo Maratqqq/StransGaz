@@ -481,19 +481,19 @@
   <h3>Заказать</h3>
   <p>Заполните форму и мы свяжемся с вами в ближайшее время</p>
 
-  <!-- НАЧАЛО НОВОЙ ФОРМЫ -->
+  <!-- Форма -->
   <form id="myForm">
     <div class="form-group">
       <label for="name">Ваше имя</label>
-      <input type="text" id="name" class="form-control" placeholder="Иван Иванов" required>
+      <input type="text" id="name" name="name" class="form-control" placeholder="Иван Иванов" required>
     </div>
     <div class="form-group">
       <label for="phone">Телефон</label>
-      <input type="tel" id="phone" class="form-control" placeholder="+7 (___) ___-__-__" required>
+      <input type="tel" id="phone" name="phone" class="form-control" placeholder="+7 (___) ___-__-__" required>
     </div>
     <div class="form-group">
       <label for="message">Ваш вопрос</label>
-      <textarea id="message" class="form-control" placeholder="Опишите ваш вопрос или заказ"></textarea>
+      <textarea id="message" name="message" class="form-control" placeholder="Опишите ваш вопрос или заказ"></textarea>
     </div>
     <button type="submit" class="submit-btn">Отправить заявку</button>
   </form>
@@ -502,22 +502,32 @@
     document.getElementById("myForm").addEventListener("submit", function(e) {
       e.preventDefault();
       
-      const data = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        message: document.getElementById("message").value
-      };
+      // Проверка заполнения обязательных полей
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
       
-      fetch("https://script.google.com/macros/s/AKfycbwlLbnS5HG0dU9fFalbDkz7X6eSE4WKuqBjUcGfKgy44WapwvNmrgSYbQHTaIRRq7rb-g/exec", {
+      if (!name || !phone) {
+        alert("Пожалуйста, заполните имя и телефон!");
+        return;
+      }
+
+      // Отправка данных
+      fetch("https://script.google.com/macros/s/AKfycbzhTd_Wb4Lxs7LYLsNK-HC_T9Hzl59KbkxBb4mucfa4xPxqfe6uduELnwrZRDXnGUqNww/exec", {
         method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          message: document.getElementById("message").value.trim()
+        })
       })
-        .then(() => alert("Спасибо! Ваша заявка отправлена."))
+        .then(() => {
+          alert("Спасибо! Ваша заявка отправлена.");
+          document.getElementById("myForm").reset(); // Очистка формы
+        })
         .catch(() => alert("Ошибка отправки. Попробуйте позже."));
     });
   </script>
-  <!-- КОНЕЦ НОВОЙ ФОРМЫ -->
 </div>
             </form>
         </div>
