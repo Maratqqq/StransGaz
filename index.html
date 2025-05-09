@@ -418,85 +418,116 @@
     </section>
 
     <!-- Секция контактов -->
-    <section class="contacts-section" id="contacts">
-        <!-- Заголовок секции -->
-        <div class="section-header">
-            <h2>Контакты</h2>
-            <p>Свяжитесь с нами любым удобным способом</p>
-        </div>
-        
-        <!-- Контейнер с контактными карточками -->
-        <div class="contacts-container">
-            <!-- Карточка контакта 1 (телефон) -->
-            <div class="contact-card animate animate-delay-1">
-                <div class="contact-icon">
-                    <!-- Иконка телефона -->
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <h3 class="contact-title">Телефон</h3>
-                <div class="contact-info">
-                    <!-- Ссылка на номер телефона -->
-                    <p><a href="tel:+78001234567">8 (800) 123-45-67</a></p>
-                    <p>Круглосуточно, без выходных</p>
-                </div>
-            </div>
-            
-            <!-- Карточка контакта 2 (адрес) -->
-            <div class="contact-card animate animate-delay-2">
-                <div class="contact-icon">
-                    <!-- Иконка метки на карте -->
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3 class="contact-title">Адрес</h3>
-                <div class="contact-info">
-                    <p>г. Дербент, ул. С-Транс-Газ, улица Шеболдаева, 56/2</p>
-                    <p>Офис 305</p>
-                    <p>Работаем: Пн-Пт с 9:00 до 18:00</p>
-                </div>
-            </div>
-            
-            <!-- Карточка контакта 3 (email) -->
-            <div class="contact-card animate animate-delay-3">
-                <div class="contact-icon">
-                    <!-- Иконка конверта -->
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3 class="contact-title">Электронная почта</h3>
-                <div class="contact-info">
-                    <!-- Ссылка на email -->
-                    <p><a href="mailto:info@transgaz.ru">info@transgaz.ru</a></p>
-                    <p>Ответим в течение двух часов</p>
-                    <p>Для коммерческих предложений: <a href="mailto:sales@transgaz.ru">sales@transgaz.ru</a></p>
-                </div>
-            </div>
-        </div>
-                <!-- Форма обратной связи -->
-        <div class="contact-form animate animate-delay-4">
-            <h3>Заказать</h3>
-            <p>Заполните форму и мы свяжемся с вами в ближайшее время</p>
-            
-            <!-- Начало формы -->
-            <form action="https://script.google.com/macros/s/AKfycbxX6DFCa03UReOlqt3OtNenM3p6muhkdOS3QqhbcG1o5eGdS6QyZW6WiQxe1Tlfy7gO/exec">
-  <!-- Ваши поля формы -->
-  <div class="form-group">
-    <label for="name">Ваше имя</label>
-    <input type="text" id="name" name="name" class="form-control" placeholder="Иван Иванов" required>
+<!-- Секция контактов -->
+<section class="contacts-section" id="contacts">
+  <!-- Заголовок секции -->
+  <div class="section-header">
+    <h2>Контакты</h2>
+    <p>Свяжитесь с нами любым удобным способом</p>
   </div>
   
-  <div class="form-group">
-    <label for="phone">Телефон</label>
-    <input type="tel" id="phone" name="phone" class="form-control" placeholder="+7 (___) ___-__-__" required>
+  <!-- Контейнер с контактными карточками -->
+  <div class="contacts-container">
+    <!-- Карточка контакта 1 (телефон) -->
+    <div class="contact-card animate animate-delay-1">
+      <div class="contact-icon">
+        <i class="fas fa-phone-alt"></i>
+      </div>
+      <h3 class="contact-title">Телефон</h3>
+      <div class="contact-info">
+        <p><a href="tel:+78001234567">8 (800) 123-45-67</a></p>
+        <p>Круглосуточно, без выходных</p>
+      </div>
+    </div>
+    
+    <!-- Карточка контакта 2 (адрес) -->
+    <div class="contact-card animate animate-delay-2">
+      <div class="contact-icon">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <h3 class="contact-title">Адрес</h3>
+      <div class="contact-info">
+        <p>г. Дербент, ул. С-Транс-Газ, улица Шеболдаева, 56/2</p>
+        <p>Офис 305</p>
+        <p>Работаем: Пн-Пт с 9:00 до 18:00</p>
+      </div>
+    </div>
+    
+    <!-- Карточка контакта 3 (email) -->
+    <div class="contact-card animate animate-delay-3">
+      <div class="contact-icon">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <h3 class="contact-title">Электронная почта</h3>
+      <div class="contact-info">
+        <p><a href="mailto:info@transgaz.ru">info@transgaz.ru</a></p>
+        <p>Ответим в течение двух часов</p>
+        <p>Для коммерческих предложений: <a href="mailto:sales@transgaz.ru">sales@transgaz.ru</a></p>
+      </div>
+    </div>
   </div>
   
-  <div class="form-group">
-    <label for="message">Ваш вопрос</label>
-    <textarea id="message" name="message" class="form-control" placeholder="Опишите ваш вопрос или заказ"></textarea>
+  <!-- Форма обратной связи -->
+  <div class="contact-form animate animate-delay-4">
+    <h3>Заказать</h3>
+    <p>Заполните форму и мы свяжемся с вами в ближайшее время</p>
+    
+    <!-- Начало формы -->
+    <form id="contactForm">
+      <!-- Ваши поля формы -->
+      <div class="form-group">
+        <label for="name">Ваше имя</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Иван Иванов" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone" class="form-control" placeholder="+7 (___) ___-__-__" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Ваш вопрос</label>
+        <textarea id="message" name="message" class="form-control" placeholder="Опишите ваш вопрос или заказ"></textarea>
+      </div>
+      
+      <button type="submit" class="submit-btn">Отправить заявку</button>
+    </form>
+    
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+
+        fetch('https://script.google.com/macros/s/AKfycbxYU8-QbxTf4A8JTgbg2TEYBPpi4QN9VzuiFvJH3JoEyejhTzV9eHMjr2QDq9QGqtaY/exec', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            phone: phone,
+            message: message
+          })
+        })
+        .then(response => response.text())
+        .then(data => {
+          if (data === 'Success') {
+            alert('Спасибо! Ваша заявка отправлена.');
+            this.reset();
+          } else {
+            alert('Ошибка: ' + data);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Произошла ошибка. Пожалуйста, попробуйте снова.');
+        });
+      });
+    </script>
   </div>
-  
-  <button type="submit" class="submit-btn">Отправить заявку</button>
-</form>
-        </div>
-    </section>
+</section>
 
     <!-- Подвал сайта -->
     <footer class="footer">
