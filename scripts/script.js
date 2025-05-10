@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // ===== Мобильное меню =====
+    // Мобильное меню
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('header nav');
     
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== Фиксированная шапка при скролле =====
+    // Фиксированная шапка при скролле
     const header = document.querySelector('.header');
     if (header) {
         window.addEventListener('scroll', function() {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== Кнопка "Наверх" =====
+    // Кнопка "Наверх"
     const backToTop = document.querySelector('.back-to-top');
     if (backToTop) {
         window.addEventListener('scroll', function() {
@@ -45,20 +45,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Плавная прокрутка 
+    // Плавная прокрутка
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             
             if (targetId === '#home') {
-                // Если якорь равен #home, прокручиваем к верху страницы
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
             } else {
-                // Для других якорей прокручиваем к соответствующему элементу
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
@@ -71,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ===== Маска для телефона =====
+    // Маска для телефона
     const phoneInput = document.getElementById('phone');
     if (phoneInput) {
         phoneInput.addEventListener('input', function(e) {
@@ -80,35 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== Обработка формы =====
-const contactForm = document.querySelector('.contact-form form');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    // Валидация полей
-    const nameInput = document.getElementById('name');
-    const phoneInput = document.getElementById('phone');
-    let isValid = true;
-
-    if (!nameInput.value.trim()) {
-      isValid = false;
-      nameInput.style.borderColor = 'red';
-    } else {
-      nameInput.style.borderColor = '#ddd';
-    }
-
-    const phoneRegex = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
-    if (!phoneRegex.test(phoneInput.value)) {
-      isValid = false;
-      phoneInput.style.borderColor = 'red';
-    } else {
-      phoneInput.style.borderColor = '#ddd';
-    }
-
-    if (isValid) {
-    
-    // ===== FAQ Accordion =====
+    // FAQ Accordion
     document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
             const item = question.parentElement;
@@ -123,7 +93,7 @@ if (contactForm) {
         });
     });
 
-    // ===== Анимации при скролле =====
+    // Анимации при скролле
     const animateElements = document.querySelectorAll('.animate');
     
     function checkAnimation() {
@@ -137,42 +107,41 @@ if (contactForm) {
         });
     }
 
-    // Запускаем проверку при загрузке и скролле
     window.addEventListener('load', checkAnimation);
     window.addEventListener('scroll', checkAnimation);
-});
 
-// Анимация счетчиков
-function animateCounters() {
-    const counters = document.querySelectorAll('.stat-number');
-    const speed = 200;
-    
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-count');
-        const count = +counter.innerText;
-        const increment = target / speed;
+    // Анимация счетчиков
+    function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
         
-        if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(animateCounters, 1);
-        } else {
-            counter.innerText = target;
-        }
-    });
-}
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-count');
+            const count = +counter.innerText;
+            const increment = target / speed;
+            
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(animateCounters, 1);
+            } else {
+                counter.innerText = target;
+            }
+        });
+    }
 
-// Вызов анимации счетчиков при появлении секции в области видимости
-function checkAnimation() {
-    const aboutSection = document.querySelector('.about-section');
-    if (aboutSection) {
-        const aboutPosition = aboutSection.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
-        
-        if (aboutPosition < screenPosition) {
-            animateCounters();
+    // Вызов анимации счетчиков при появлении секции в области видимости
+    function checkCounters() {
+        const aboutSection = document.querySelector('.about-section');
+        if (aboutSection) {
+            const aboutPosition = aboutSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (aboutPosition < screenPosition) {
+                animateCounters();
+            }
         }
     }
-}
 
-window.addEventListener('scroll', checkAnimation);
-window.addEventListener('load', checkAnimation);
+    window.addEventListener('scroll', checkCounters);
+    window.addEventListener('load', checkCounters);
+});
