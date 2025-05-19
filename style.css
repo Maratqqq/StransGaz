@@ -222,18 +222,18 @@ body {
 .hero-section {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 150px 5% 100px;
   background: linear-gradient(135deg, #f4f4f4 0%, #e6f0fa 100%);
   position: relative;
   overflow: hidden;
+  gap: 40px;
 }
 
 .hero-content {
-  flex: 0 0 50%;
-  max-width: 600px;
+  flex: 0 0 45%;
+  min-width: 400px;
   z-index: 2;
-  margin-right: 5%;
   text-align: left;
 }
 
@@ -256,11 +256,13 @@ body {
 
 .hero-image {
   flex: 0 0 45%;
+  min-width: 400px;
   position: relative;
   z-index: 1;
 }
 
 .hero-image img {
+  width: 100%;
   max-width: 100%;
   height: auto;
   animation: float 6s ease-in-out infinite;
@@ -278,23 +280,26 @@ body {
   z-index: 0;
 }
 
-/* Новые стили для кнопки в hero-секции */
 .cta-button {
   background-color: var(--primary-color);
   color: var(--white);
-  padding: 12px 30px;
+  padding: 15px 35px;
   text-decoration: none;
   border-radius: 30px;
-  font-weight: 600;
+  font-weight: 700;
   transition: var(--transition);
   border: 2px solid var(--primary-color);
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 30px;
+  font-size: 1.1em;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .cta-button:hover {
   background-color: transparent;
   color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 /* Конец измененного блока */
 
@@ -973,20 +978,18 @@ body {
   .hero-section {
     flex-direction: column;
     padding: 120px 5% 80px;
-    text-align: center;
   }
-
-  .hero-content {
-    flex: 1 1 100%;
-    max-width: 100%;
-    margin-bottom: 50px;
-    text-align: center;
-    margin-right: 0;
-  }
-
+  
+  .hero-content,
   .hero-image {
-    flex: 1 1 100%;
-    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .hero-image {
+    margin: 40px auto;
+    max-width: 500px;
   }
 }
 
