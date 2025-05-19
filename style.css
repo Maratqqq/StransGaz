@@ -30,7 +30,6 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -41,11 +40,9 @@ body {
   0% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-20px);
   }
-
   100% {
     transform: translateY(0px);
   }
@@ -221,27 +218,23 @@ body {
   margin: 0 auto;
 }
 
+/* Начало измененного блока для hero-section */
 .hero-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 150px 5% 100px;
-  /* Используем % для адаптивности */
   background: linear-gradient(135deg, #f4f4f4 0%, #e6f0fa 100%);
   position: relative;
   overflow: hidden;
-  /* Важно, чтобы элементы не вылезали */
 }
 
 .hero-content {
-  flex: 1;
+  flex: 0 0 50%;
   max-width: 600px;
-  /* Ограничиваем ширину, но не фиксируем ее */
   z-index: 2;
-  margin-right: 20px;
-  /* Добавляем отступ между текстом и изображением */
+  margin-right: 5%;
   text-align: left;
-  /* Выравниваем текст по левому краю */
 }
 
 .hero-content h2 {
@@ -262,37 +255,48 @@ body {
 }
 
 .hero-image {
-  flex: 1;
+  flex: 0 0 45%;
   position: relative;
   z-index: 1;
-  max-width: 50%;
-  /* Ограничиваем ширину изображения */
 }
 
 .hero-image img {
   max-width: 100%;
-  /* Самое важное: изображение адаптируется к контейнеру */
   height: auto;
-  /* Сохраняем пропорции */
   animation: float 6s ease-in-out infinite;
   display: block;
-  /* Избавляемся от лишних пробелов под изображением */
 }
 
 .hero-shape {
   position: absolute;
   width: 50vw;
-  /* Адаптивная ширина */
   height: 50vw;
-  /* Адаптивная высота */
   border-radius: 50%;
   background: linear-gradient(45deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 168, 255, 0.05) 100%);
   right: -20vw;
-  /* Адаптивное позиционирование */
   top: -20vw;
-  /* Адаптивное позиционирование */
   z-index: 0;
 }
+
+/* Новые стили для кнопки в hero-секции */
+.cta-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: var(--transition);
+  border: 2px solid var(--primary-color);
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+/* Конец измененного блока */
 
 .pricing-section {
   width: 100%;
@@ -973,32 +977,16 @@ body {
   }
 
   .hero-content {
-    margin-bottom: 50px;
+    flex: 1 1 100%;
     max-width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+    margin-right: 0;
   }
 
-  .gas-container {
-    flex-direction: column;
-  }
-
-  .gas-image-container {
-    order: 2;
-    margin: 30px 0;
-  }
-
-  .left-block,
-  .right-block {
-    order: unset;
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .steps-line {
-    display: none;
-  }
-
-  .steps-container {
-    padding-top: 0;
+  .hero-image {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 
@@ -1139,8 +1127,7 @@ body {
   .advantage-card {
     padding: 30px 15px;
   }
-Прошу прощения, вот конец файла:
-
+}
 
 .workflow-section {
   padding: 60px 3%;
@@ -1174,7 +1161,6 @@ body {
 .footer-links h4,
 .footer-contact h4 {
   font-size: 1.1em;
-}
 }
 
 @media (max-width: 360px) {
@@ -1355,10 +1341,7 @@ html {
 @media (max-width: 767px) {
   .gas-image-container img {
     max-width: 80%;
-    /* Уменьшает ширину до 80% от родителя */
     height: auto;
-    /* Сохраняет пропорции */
     margin: 0 auto;
-    /* Центрирует */
   }
 }
