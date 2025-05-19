@@ -1344,25 +1344,3 @@ html {
     margin: 0 auto; /* Центрирует */
   }
 }
-
-/* Фикс для hero-section при масштабировании */
-.hero-section {
-    max-width: 100vw; /* Ограничиваем по ширине экрана */
-    overflow-x: hidden; /* Скрываем горизонтальный скролл */
-}
-
-.hero-content, 
-.hero-image {
-    flex: 1 1 auto; /* Гибкое растяжение */
-    min-width: 300px; /* Минимальная ширина */
-}
-
-@media (max-width: 992px) {
-    .hero-section {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-image img {
-        max-width: 80%; /* Уменьшаем фото на мобильных */
-    }
-}
