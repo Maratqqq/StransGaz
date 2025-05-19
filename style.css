@@ -205,73 +205,41 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 150px 5% 100px;
+  padding: 150px 5% 100px; /* Используем % для адаптивности */
   background: linear-gradient(135deg, #f4f4f4 0%, #e6f0fa 100%);
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Важно, чтобы элементы не вылезали */
 }
 
 .hero-content {
   flex: 1;
-  max-width: 600px;
+  max-width: 600px;  /* Ограничиваем ширину, но не фиксируем ее */
   z-index: 2;
-}
-
-.hero-content h2 {
-  font-size: 3em;
-  margin-bottom: 20px;
-  color: var(--dark-color);
-  line-height: 1.2;
-}
-
-.hero-content h2 span {
-  color: var(--primary-color);
-}
-
-.hero-content p {
-  font-size: 1.1em;
-  margin-bottom: 30px;
-  color: var(--gray);
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: 15px 35px;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: var(--transition);
-  border: 2px solid var(--primary-color);
-  font-size: 1.1em;
-}
-
-.cta-button:hover {
-  background-color: transparent;
-  color: var(--primary-color);
+  margin-right: 20px; /* Добавляем отступ между текстом и изображением */
 }
 
 .hero-image {
   flex: 1;
   position: relative;
   z-index: 1;
+  max-width: 50%;  /* Ограничиваем ширину изображения */
 }
 
 .hero-image img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100%; /* Самое важное: изображение адаптируется к контейнеру */
+  height: auto;    /* Сохраняем пропорции */
   animation: float 6s ease-in-out infinite;
+  display: block; /* Избавляемся от лишних пробелов под изображением */
 }
 
 .hero-shape {
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 50vw;  /* Адаптивная ширина */
+  height: 50vw; /* Адаптивная высота */
   border-radius: 50%;
   background: linear-gradient(45deg, rgba(0,123,255,0.1) 0%, rgba(0,168,255,0.05) 100%);
-  right: -200px;
-  top: -200px;
+  right: -20vw; /* Адаптивное позиционирование */
+  top: -20vw;   /* Адаптивное позиционирование */
   z-index: 0;
 }
 
@@ -480,7 +448,6 @@ body {
   padding: 100px 5%;
   background-color: var(--light-color);
   text-align: center;
-  position: relative;
 }
 
 .steps-container {
@@ -717,7 +684,6 @@ body {
   padding: 20px 25px;
   max-height: 500px;
 }
-
 .contacts-section {
   padding: 100px 5%;
   background: linear-gradient(135deg, var(--dark-color) 0%, #222 100%);
@@ -846,7 +812,7 @@ body {
   line-height: 1.6;
 }
 
-.footer-links h4, 
+.footer-links h4,
 .footer-contact h4 {
   color: var(--white);
   font-size: 1.3em;
@@ -855,7 +821,7 @@ body {
   padding-bottom: 10px;
 }
 
-.footer-links h4::after, 
+.footer-links h4::after,
 .footer-contact h4::after {
   content: '';
   position: absolute;
@@ -962,13 +928,14 @@ body {
   .gas-container {
     flex-direction: column;
   }
-  
+
   .gas-image-container {
     order: 2;
     margin: 30px 0;
   }
-  
-  .left-block, .right-block {
+
+  .left-block,
+  .right-block {
     order: unset;
     width: 100%;
     max-width: 400px;
@@ -1061,122 +1028,117 @@ body {
   .header {
     padding: 10px 3%;
   }
-  
+
   .header .logo img {
     height: 40px;
   }
-  
+
   .header .logo h1 {
     font-size: 1.3em;
   }
-  
+
   .header .logo p {
     font-size: 0.7em;
   }
-  
+
   .header .cta {
     padding: 8px 15px;
     font-size: 0.8em;
   }
-  
+
   .hero-section {
     padding: 100px 3% 60px;
   }
-  
+
   .hero-content h2 {
     font-size: 1.6em;
   }
-  
+
   .cta-button {
     padding: 12px 25px;
     font-size: 1em;
   }
-  
+
   .pricing-section {
     padding: 60px 3%;
   }
-  
+
   .section-header h2 {
     font-size: 1.5em;
   }
-  
+
   .gas-block {
     padding: 20px;
     width: 100%;
   }
-  
+
   .gas-name {
     font-size: 1.5em;
   }
-  
+
   .gas-price {
     font-size: 1.5em;
   }
-  
+
   .advantages-section {
     padding: 60px 3%;
   }
-  
+
   .advantage-card {
     padding: 30px 15px;
   }
-  
+
   .workflow-section {
     padding: 60px 3%;
   }
-  
+
   .step {
     width: 100%;
     padding: 25px;
   }
-  
+
   .contacts-section {
     padding: 60px 3%;
   }
-  
+
   .contact-card {
     padding: 30px 20px;
   }
-  
+
   .contact-form {
     padding: 25px 15px;
   }
-  
+
   .footer {
     padding: 40px 3% 20px;
   }
-  
+
   .footer-logo h3 {
     font-size: 1.5em;
   }
-  
-  .footer-links h4, .footer-contact h4 {
+
+  .footer-links h4,
+  .footer-contact h4 {
     font-size: 1.1em;
   }
-  
-  .back-to-top {
-    width: 40px;
-    height: 40px;
-    font-size: 1em;
-    bottom: 20px;
-    right: 20px;
-  }
+
 }
 
 @media (max-width: 360px) {
   .hero-content h2 {
     font-size: 1.4em;
   }
-  
+
   .header .logo h1 {
     font-size: 1.1em;
   }
-  
+
   .composition-bar {
     height: 40px;
   }
-  
-  .propane-part, .butane-part {
+
+  .propane-part,
+  .butane-part {
     font-size: 0.9em;
   }
 }
@@ -1199,19 +1161,19 @@ html {
   .header {
     padding: 8px 3%;
   }
-  
+
   .header .logo img {
     height: 35px;
   }
-  
+
   .header .logo h1 {
     font-size: 1.1em;
   }
-  
+
   .header .logo p {
     font-size: 0.65em;
   }
-  
+
   .header .cta {
     padding: 6px 12px;
     font-size: 0.7em;
@@ -1221,11 +1183,11 @@ html {
     padding: 80px 3% 40px;
     flex-direction: column;
   }
-  
+
   .hero-content h2 {
     font-size: 1.5em;
   }
-  
+
   .cta-button {
     padding: 10px 20px;
     font-size: 0.9em;
@@ -1292,7 +1254,7 @@ html {
   .advantages-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .advantage-card {
     padding: 20px;
   }
@@ -1325,8 +1287,8 @@ html {
     animation: none !important;
     opacity: 1 !important;
   }
-  
-  .hero-image img, 
+
+  .hero-image img,
   .gas-image {
     animation: none !important;
   }
@@ -1339,8 +1301,11 @@ html {
 
 @media (max-width: 767px) {
   .gas-image-container img {
-    max-width: 80%; /* Уменьшает ширину до 80% от родителя */
-    height: auto; /* Сохраняет пропорции */
-    margin: 0 auto; /* Центрирует */
+    max-width: 80%;
+    /* Уменьшает ширину до 80% от родителя */
+    height: auto;
+    /* Сохраняет пропорции */
+    margin: 0 auto;
+    /* Центрирует */
   }
 }
