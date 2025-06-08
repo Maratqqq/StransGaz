@@ -1348,3 +1348,72 @@ html {
     margin: 0 auto;
   }
 }
+
+/* Burger Menu Styles */
+.burger-menu {
+    display: none;
+    position: relative;
+    z-index: 100;
+}
+
+#burger {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+#burger img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+#burger:hover img {
+    transform: scale(1.1);
+}
+
+.burger-slide {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: #333;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    padding: 20px;
+    border-radius: 4px;
+    z-index: 99;
+}
+
+.burger-slide.disp {
+    display: block;
+}
+
+.burger-slide .nav-item {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    margin: 5px 0;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: color 0.2s;
+}
+
+.burger-slide .nav-item:hover {
+    color: #FF7400;
+}
+
+/* Показываем бургер только на мобильных */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+    
+    .nav, .phone, .btn {
+        display: none;
+    }
+}
